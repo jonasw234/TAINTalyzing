@@ -1,0 +1,149 @@
+\chapter{Einleitung}
+    \section{Motivation}
+        Das Aufspüren und
+        Beheben von Sicherheitslücken ist eine wichtige Aufgabe bei der Entwicklung von Software.
+
+        Zwar existieren auf den meisten heutigen Systemen Schutzmechanismen,
+        die ein Ausnutzen vorhandener Sicherheitslücken erschweren sollen,
+        doch können diese natürlich nicht als Allheilmittel eingesetzt werden,
+        da sie zum einen nicht auf allen Systemen vorhanden und
+        aktiv sind,
+        zum anderen aber auch,
+        da sie nicht das darunter liegende Problem selbst korrigieren,
+        sondern nur das Ausnutzen erschweren sollen und
+        sich somit meistens umgehen lassen.
+
+        Dies kann dazu führen,
+        dass häufig nicht mehr einzelne Lücken von Angreifern ausgenutzt werden,
+        um Systeme zu übernehmen,
+        sondern es werden mehrere Lücken miteinander kombiniert,
+        um Stück für Stück die Abwehrmaßnahmen zu umgehen und
+        Angriffsmöglichkeiten auszuweiten.
+
+        Eine manuelle Analyse von Quelltexten auf Sicherheitslücken dagegen ist sowohl
+        mit hohen Kosten verbunden,
+        da extra geschulte Mitarbeiter zu diesem Zweck in mühevoller Arbeit Quelltexte analysieren müssen,
+        als auch selbst wiederum fehleranfällig,
+        da gerade bei komplexen Programmabschnitten der Programmfluss unter Umständen sehr kompliziert wird.
+
+        Aus diesem Grund kann eine statische Analyse von Quelltexten im Hinblick auf Schwachstellen hilfreich sein,
+        um verschiedene Fehler schnell und
+        einfach zu finden.
+
+        Natürlich kann eine statische Analyse nicht sämtliche Fehler finden,
+        allerdings kann die Zeit,
+        die Mitarbeiter mit der Analyse von Quelltexten verbringen,
+        sinnvoller dafür eingesetzt werden,
+        komplexe und
+        fehleranfällige Codestellen intensiver zu prüfen,
+        als den kompletten Quelltext minutiös nach trivialen Schwachstellen abzusuchen.
+
+        Aus diesem Grund sollte eine manuelle Analyse gerade auch komplexer Codeabschnitte erfolgen,
+        wobei auf diese besonders hingewiesen werden sollte.
+
+        Da immer wieder neue Muster entdeckt werden,
+        welche einen Angriff ermöglichen,
+        ist es dabei besonders wichtig,
+        dass die Regeln für die statische Analyse möglichst einfach erweiterbar sind.
+
+        Viele existierende Schwachstellenscanner haben dieses Problem,
+        da sie zum einen auf eine kleine Anzahl von Programmiersprachen beschränkt sind,
+        zum anderen aber auch häufig entweder einen fest einprogrammierten Regelsatz haben oder
+        keine einfache Anpassung und Erweiterung der Regelsätze durch Benutzer erlauben.
+
+    \section{Problemstellung und -abgrenzung}\label{Problemstellung und -abgrenzung}
+        Die Aufgabe besteht darin,
+        ein Framework zu erstellen,
+        welches der statischen Analyse von Quelltexten dient.
+
+        Das Framework soll dabei möglichst flexibel sein,
+        um eine große Anzahl von Quelltexten untersuchen zu können und
+        eine stetige Anpassung und
+        Erweiterung im Unternehmensumfeld zu ermöglichen.
+
+        Zu diesem Zweck wird das Framework modular aufgebaut,
+        wobei durch jedes Modul eine andere Programmiersprache analysiert werden kann.
+        Somit soll es möglich sein,
+        mit nur einem einheitlichen Framework sämtliche Quelltexte automatisch auf Schwachstellen untersuchen zu können.
+
+        Dabei könnte ein Modul für die Erkennung und
+        Analyse von Quelltexten in C,
+        ein anderes für die Erkennung und
+        Analyse von Quelltexten in
+        \gls{PHP} oder
+        Python verantwortlich sein.
+        Die Modularisierung hilft dabei,
+        die Komplexität gering zu halten und
+        gewährleistet eine einfachere Erweiterbarkeit,
+        da Benutzer auch selbst neue Module schreiben und
+        zum Scannen verwenden können.
+
+        Innerhalb der Module wiederum werden Regelsätze verwendet,
+        anhand derer Schwachstellen beschrieben werden.
+
+        Hierbei werden in den Regelsätzen verwundbare Funktionen und
+        auch Benutzereingaben aufgelistet,
+        sodass Anwender später nachvollziehen können,
+        an welcher Stelle ihr Quelltext verwundbar sein könnte und
+        ob ein direkter Angriff durch eine Benutzereingabe erkannt wurde.
+
+        Anschließend wird das Framework versuchen automatisch zu erkennen,
+        welches Modul es für welche Datei aufrufen soll,
+        und
+        anhand der Regelsätze die Quelltexte untersuchen.
+
+        Es wird dabei nicht darauf eingegangen,
+        ob ein Ausnutzen der gefundenen Sicherheitslücken durch moderne Schutzmechanismen verhindert werden könnte,
+        da diese Schutzmechanismen aus den oben beschrieben Gründen nur als letzte Verteidigungslinie dienen sollten.
+
+        Auch eine Prüfung auf syntaktische Korrektheit der zu untersuchenden Quelltexte wird nicht vorgenommen.
+
+        Stattdessen wird davon ausgegangen,
+        dass es sich bei den zu prüfenden Quelltexten um syntaktisch korrekten Programmcode handelt,
+        um den Arbeitsaufwand zu reduzieren und
+        das Programm auf das Wesentliche
+        -- die Erkennung von Sicherheitslücken
+        -- zu beschränken.
+
+        Weiterhin ist zu beachten,
+        dass in einer statischen Analyse,
+        welche beliebige Quelltexte untersuchen kann,
+        eine Analyse der Programmlogik nicht möglich ist.
+        Schwachstellen in der Programmlogik können aus diesem Grund nicht durch das Framework erkannt werden und
+        es werden auch keine Versuche unternommen,
+        solche zu erkennen.
+        Eine derartige Analyse sollte stattdessen aus Sicht des Autors durch Unittests durchgeführt werden.
+
+        So wird zum Beispiel nicht untersucht,
+        ob ein Benutzer mit der Rolle
+        \enquote{Benutzer} in der Lage ist,
+        sich selbst die Rolle
+        \enquote{Administrator} zu geben,
+        wodurch seine unprivilegierte Rolle umgangen werden kann.
+
+        Weiterhin ist es dem Autor nicht möglich,
+        für sämtliche Programmiersprachen und
+        Angriffsmuster Regeln zu schreiben.
+
+        Aus diesem Grund wird versucht,
+        anhand von Modulen für einzelne Programmiersprachen und
+        einfach zu konstruierenden Regelsätzen eine Erweiterbarkeit zu gewährleisten.
+
+        Eine Erstellung vollständiger Grammatiken und
+        Regelsätze dagegen ist nicht Ziel der Ausarbeitung.
+        Stattdessen werden vereinfachte Versionen erstellt,
+        die zeigen sollen,
+        wie eine Umsetzung im späteren Betrieb möglich sein wird.
+
+        Da das Ziel der Ausarbeitung nicht die Erstellung eines vollständigen Parsers welcher auch die syntaktische Korrektheit der Eingabedateien prüfen kann,
+        sondern die statische Analyse von Schwachstellen ist,
+        scheint dieser Ansatz sinnvoll.
+
+        Um die in der Motivation angesprochene manuelle Analyse zu vereinfachen,
+        wird zusätzlich versucht,
+        anhand verschiedener Metriken die Komplexität eines Codeabschnitts zu ermitteln.
+
+        Da komplexerer Code naturgemäß auch ein höheres Fehlerpotenzial birgt,
+        können hiermit entsprechende Abschnitte hervorgehoben werden,
+        sodass die manuelle Analyse zielgerichteter und
+        schneller durchgeführt werden kann.

@@ -1,0 +1,2 @@
+Objekttyp;Funktionsname;Absicherungsobjekt;Absicherungsfunktionsname;Absicherungsparameter;Absicherungsparameterwert;Kommentar
+Template;substitute;html;escape($VARIABLE, $QUOTE);$QUOTE;/(quote=)?True/;Gibt parametrisierte Texte aus, Gefahr von XSS

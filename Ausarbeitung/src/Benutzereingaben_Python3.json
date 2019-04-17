@@ -1,0 +1,14 @@
+{
+    "urlparse":
+    {
+        "Funktionen":
+        [
+            {
+                "Funktion": "query",
+                "Parameter": null,
+                "Parameterwert": null,
+                "Kommentar": "GET Request bei Nutzung von urlparse"
+            }
+        ]
+    }
+}

@@ -1,0 +1,11 @@
+.taints {
+    background-color: rgb(255, 0, 0);
+}
+
+.sinks {
+    background-color: rgb(255, 255, 0);
+}
+
+#nothing-found {
+    background-color: rgb(0, 255, 0);
+}

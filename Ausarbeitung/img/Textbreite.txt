@@ -1,0 +1,3 @@
+Für DIV=10 Textbreite 556 px
+
+Für DIV=11 Textbreite 578 px

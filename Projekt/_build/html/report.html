@@ -1,0 +1,465 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>report module &#8212; TAINTalyzing 2019-04-08 documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="module-report">
+<span id="report-module"></span><h1>report module<a class="headerlink" href="#module-report" title="Permalink to this headline">¶</a></h1>
+<p>A module to generate reports for the analysis results.</p>
+<dl class="class">
+<dt id="report.Report">
+<em class="property">class </em><code class="descclassname">report.</code><code class="descname">Report</code><span class="sig-paren">(</span><em>analyses: list</em>, <em>complexity: int</em>, <em>indirection: int</em>, <em>output: _io.TextIOWrapper</em><span class="sig-paren">)</span><a class="headerlink" href="#report.Report" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Generate reports in various formats.</p>
+<p class="rubric">Methods</p>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="#report.Report.generate_html_report" title="report.Report.generate_html_report"><code class="xref py py-obj docutils literal notranslate"><span class="pre">generate_html_report</span></code></a>()</td>
+<td>Generate a report in HTML format.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#report.Report.generate_markdown_report" title="report.Report.generate_markdown_report"><code class="xref py py-obj docutils literal notranslate"><span class="pre">generate_markdown_report</span></code></a>()</td>
+<td>Generate a report in markdown format.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#report.Report.generate_plaintext_report" title="report.Report.generate_plaintext_report"><code class="xref py py-obj docutils literal notranslate"><span class="pre">generate_plaintext_report</span></code></a>()</td>
+<td>Generate a plaintext report.</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="report.Report._Report__generate_report">
+<code class="descname">_Report__generate_report</code><span class="sig-paren">(</span><em>formatter: Callable = &lt;function Report.&lt;lambda&gt;&gt;</em><span class="sig-paren">)</span><a class="headerlink" href="#report.Report._Report__generate_report" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate a report.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>formatter</strong> <span class="classifier-delimiter">:</span> <span class="classifier">typing.Callable, optional</span></dt>
+<dd><p class="first last">A function to format the strings before output</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="report.Report._Report__report_begin">
+<code class="descname">_Report__report_begin</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; str<a class="headerlink" href="#report.Report._Report__report_begin" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a message for the beginning of the report.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>str</strong></dt>
+<dd><p class="first last">A message to print at the beginning of the report</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="report.Report._Report__report_complexity">
+<code class="descname">_Report__report_complexity</code><span class="sig-paren">(</span><em>complexity: int</em><span class="sig-paren">)</span> &#x2192; str<a class="headerlink" href="#report.Report._Report__report_complexity" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return method complexity.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>complexity</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">The complexity of the method</p>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>str</strong></dt>
+<dd><p class="first last">A string with the message for the complexity</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="report.Report._Report__report_end">
+<code class="descname">_Report__report_end</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; str<a class="headerlink" href="#report.Report._Report__report_end" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return message to append to the report.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>str</strong></dt>
+<dd><p class="first last">Message to append to the report</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="report.Report._Report__report_file">
+<code class="descname">_Report__report_file</code><span class="sig-paren">(</span><em>filename: str</em><span class="sig-paren">)</span> &#x2192; str<a class="headerlink" href="#report.Report._Report__report_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return new filename.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>filename</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">The name of the file</p>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>str</strong></dt>
+<dd><p class="first last">A string with the message about which file the analysis is about</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="report.Report._Report__report_method">
+<code class="descname">_Report__report_method</code><span class="sig-paren">(</span><em>method: method.Method</em>, <em>file_: input_file.InputFile</em><span class="sig-paren">)</span> &#x2192; str<a class="headerlink" href="#report.Report._Report__report_method" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return information about the method.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>method</strong> <span class="classifier-delimiter">:</span> <span class="classifier">Method</span></dt>
+<dd><p class="first last">The method about which information is requested</p>
+</dd>
+<dt><strong>file_</strong> <span class="classifier-delimiter">:</span> <span class="classifier">InputFile</span></dt>
+<dd><p class="first last">The file where the method resides</p>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>str</strong></dt>
+<dd><p class="first last">Information about the method</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="report.Report._Report__report_module">
+<code class="descname">_Report__report_module</code><span class="sig-paren">(</span><em>module: str</em><span class="sig-paren">)</span> &#x2192; str<a class="headerlink" href="#report.Report._Report__report_module" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return detected module.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>module</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">The module that was detected</p>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>str</strong></dt>
+<dd><p class="first last">A message to indicate which module was used to analyze the file</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="report.Report._Report__report_needed">
+<code class="descname">_Report__report_needed</code><span class="sig-paren">(</span><em>method</em><span class="sig-paren">)</span> &#x2192; bool<a class="headerlink" href="#report.Report._Report__report_needed" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check if we need to report the method.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>method</strong> <span class="classifier-delimiter">:</span> <span class="classifier">Method</span></dt>
+<dd><p class="first last">Do we need to report this method?</p>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>bool</strong></dt>
+<dd><p class="first last">True if the method needs to be reported</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="report.Report._Report__report_nothing_found">
+<code class="descname">_Report__report_nothing_found</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; str<a class="headerlink" href="#report.Report._Report__report_nothing_found" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return nothing found message.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>str</strong></dt>
+<dd><p class="first last">Nothing found message</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="report.Report._Report__report_sink">
+<code class="descname">_Report__report_sink</code><span class="sig-paren">(</span><em>sink: dict</em>, <em>comment: str</em>, <em>method: method.Method</em>, <em>file_: input_file.InputFile</em>, <em>formatter: Callable = &lt;function Report.&lt;lambda&gt;&gt;</em><span class="sig-paren">)</span> &#x2192; str<a class="headerlink" href="#report.Report._Report__report_sink" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a detected sink.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>sink</strong> <span class="classifier-delimiter">:</span> <span class="classifier">dict</span></dt>
+<dd><p class="first last">The sink that was detected</p>
+</dd>
+<dt><strong>comment</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">Comment for this sink</p>
+</dd>
+<dt><strong>method</strong> <span class="classifier-delimiter">:</span> <span class="classifier">Method</span></dt>
+<dd><p class="first last">The method where the sink was found</p>
+</dd>
+<dt><strong>file_</strong> <span class="classifier-delimiter">:</span> <span class="classifier">InputFile</span></dt>
+<dd><p class="first last">The file where the method resides</p>
+</dd>
+<dt><strong>formatter</strong> <span class="classifier-delimiter">:</span> <span class="classifier">typing.Callable, optional</span></dt>
+<dd><p class="first last">Format the output with this function</p>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>str</strong></dt>
+<dd><p class="first last">A message about how the sink works</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="report.Report._Report__report_sinks">
+<code class="descname">_Report__report_sinks</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#report.Report._Report__report_sinks" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return pre-sink-list-message.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>str</strong></dt>
+<dd><p class="first last">A message about which sinks were detected (should be followed by a list of sinks)</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="report.Report._Report__report_taint">
+<code class="descname">_Report__report_taint</code><span class="sig-paren">(</span><em>taint: list</em>, <em>file_: input_file.InputFile</em>, <em>formatter: Callable = &lt;function Report.&lt;lambda&gt;&gt;</em><span class="sig-paren">)</span> &#x2192; str<a class="headerlink" href="#report.Report._Report__report_taint" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a detected taint.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>taint</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list</span></dt>
+<dd><p class="first last">The list of calls to this taint that was detected</p>
+</dd>
+<dt><strong>file_</strong> <span class="classifier-delimiter">:</span> <span class="classifier">InputFile</span></dt>
+<dd><p class="first last">The file where the method resides</p>
+</dd>
+<dt><strong>formatter</strong> <span class="classifier-delimiter">:</span> <span class="classifier">typing.Callable, optional</span></dt>
+<dd><p class="first last">Format the output with this function</p>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>str</strong></dt>
+<dd><p class="first last">A message about how the taint works</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="report.Report._Report__report_taints">
+<code class="descname">_Report__report_taints</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; str<a class="headerlink" href="#report.Report._Report__report_taints" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return pre-taint-list-message.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>str</strong></dt>
+<dd><p class="first last">A message about which taints were detected (should be followed by a list of taints)</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="report.Report.generate_html_report">
+<code class="descname">generate_html_report</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#report.Report.generate_html_report" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate a report in HTML format.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="report.Report.generate_markdown_report">
+<code class="descname">generate_markdown_report</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#report.Report.generate_markdown_report" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate a report in markdown format.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="report.Report.generate_plaintext_report">
+<code class="descname">generate_plaintext_report</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#report.Report.generate_plaintext_report" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate a plaintext report.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">TAINTalyzing</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2019, Jonas A. Wendorf.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.4</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/report.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

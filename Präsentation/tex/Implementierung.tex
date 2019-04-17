@@ -1,0 +1,109 @@
+\section{Implementierung}
+    \subsection{Vorgehensweise des Frameworks}
+        \begin{frame}{\secname: \subsecname}
+            \begin{enumerate}
+                \item Quelltexte einlesen
+                \item Passendes Modul auswählen
+                \item Quelltexte parsen
+                \item Regelsätze parsen
+                \item Nach Schwachstellen suchen
+                \item Codekomplexität analysieren
+                \item Report erstellen
+            \end{enumerate}
+        \end{frame}
+
+    % \subsection{Parsen der Quelltexte}
+    %     \begin{frame}{\secname: \subsecname}
+    %         \begin{itemize}
+    %             \item PyParsing wird bevorzugt
+    %             \item Grammatiken sind vergleichsweise einfach zu erstellen
+    %             \item Eignet sich gut für einfachere Grammatiken
+    %             \item[\textrightarrow] Für die Schwachstellensuche unwichtige Details werden ignoriert
+    %             \item Andere Bibliotheken sind ebenfalls möglich, wenn die Ergebnisse an PyParsing angeglichen werden
+    %         \end{itemize}
+    %     \end{frame}
+
+    % \subsection{Parsen der Regelsätze}
+    %     \begin{frame}[fragile]{\secname: \subsecname}
+    %         \begin{itemize}
+    %             \item Regeln liegen im YAML-Format vor
+    %             \item Werden mittels PyYAML geladen
+    %             \item[\textrightarrow] Daten werden direkt in passenden Strukturen dargestellt
+    %         \end{itemize}
+    %         \begin{lstlisting}[gobble=16]
+    %             {'OBJECT':
+    %                 {'Methods':
+    %                     [{'Methodname': 'METHODNAME',
+    %                     'Parameters': [None, '$TAINT'],
+    %                     'Comment': 'COMMENT'}]
+    %                 }
+    %             }
+    %         \end{lstlisting}
+    %     \end{frame}
+
+    \subsection{Vorgehensweise bei der Suche nach Schwachstellen}
+        \begin{frame}{\secname: \subsecname}
+            \begin{enumerate}
+                \item Parser ermittelt Methoden innerhalb der Datei
+                \item Findet alle Variablen, die innerhalb der Methode verwendet werden
+                \item Sucht nach möglichen Quellen, Senken oder Absicherungen
+                \item Vergleicht die Eingabeparameter mit der Variablenliste
+                \item[\textrightarrow] Schließt hardcodierte Methodenaufrufe aus
+                \item Verfolgt Variablen zurück
+                \item Informiert das Framework über neu hinzugekommene verwundbare Methoden
+                \item Wiederholung bis keine neuen Ergebnisse geliefert werden
+            \end{enumerate}
+        \end{frame}
+
+    \subsection{Variablenrückverfolgung}
+        \begin{frame}[fragile]{\secname: \subsecname}
+            \begin{itemize}
+                \item Verfolgung der Variable »test« im Aufruf von \texttt{printf}
+            \end{itemize}
+            \begin{lstlisting}[gobble=16, escapechar=!]
+                #include <stdio.h>
+                !\hl<6>{int main(int argc, char * argv[]) \{}!
+                    !\hl<5>{char * foo = argv[1];}!
+                    !\hl<4>{char * bar = foo;}!
+                    !\hl<3>{char * test = bar;}!
+                    !\hl<2>{printf(test);}!
+                }
+            \end{lstlisting}
+        \end{frame}
+
+    \subsection{Exklusive Kontrollstrukturen}
+        \begin{frame}[fragile]{\secname: \subsecname}
+            \begin{itemize}
+                \item Kontrollstrukturen, die wechselseitig exklusive Pfade erzeugen
+                \item Beispiel: if/else
+            \end{itemize}
+            \begin{lstlisting}[gobble=16, escapechar=@]
+                #include <stdio.h>
+                int main(int argc, char* argv[]) {
+                    @\colorbox{yellow}{if (0) \{}@
+                        @\colorbox{yellow}{test();}@
+                    } @\colorbox{green}{else if (2) \{}@
+                        @\colorbox{green}{printf(argv[1]);}@
+                    } @\colorbox{cyan}{else if (3) \{}@
+                        @\colorbox{cyan}{printf("hallo\textbackslash{}n");}@
+                    } @\colorbox{brown}{else \{}@
+                        @\colorbox{brown}{printf("bye!\textbackslash{}n");}@
+                    }
+                    return 0;
+                }
+            \end{lstlisting}
+        \end{frame}
+
+%     \subsection{Komplexitätsprüfung}
+%         \begin{frame}{\secname: \subsecname}
+%             \begin{itemize}
+%                 \item Nutzt zyklomatische Komplexität
+%                 \item \( v(G) = e - n + 2 \)
+%                 \item \( n \) sind die Knoten, \( e \) die Kanten
+%                 \item Jede Anweisung ist ein Knoten und eine Kante
+%                 \item Exklusive Kontrollstrukturen sind ein Knoten und zwei Kanten
+%                 \item Schleifen sind ein Knoten und drei Kanten (Einstieg, Wiederholung, Ende)
+%                 \item Gibt an, wie viele Testfälle maximal benötigt werden, um die Methode komplett zu testen
+%                 \item Eher geringe Aussagekraft, aber gut als Indikator für mögliche Probleme geeignet
+%             \end{itemize}
+%         \end{frame}

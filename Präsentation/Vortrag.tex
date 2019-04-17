@@ -1,0 +1,76 @@
+\documentclass{beamer}
+\usetheme{Boadilla}
+\usecolortheme{whale}
+\setbeamertemplate{navigation symbols}{}
+
+\usepackage{fontspec}
+\usepackage{graphicx}
+\graphicspath{{img/}}
+\usepackage{listings}
+\usepackage{xcolor}
+\definecolor{light-gray}{gray}{0.92}
+\usepackage{soul}
+\sethlcolor{yellow}
+\renewcommand<>{\hl}[1]{\only#2{\beameroriginal{\hl}}{#1}}
+\makeatletter
+\newcommand\SoulColor{%
+  \let\set@color\beamerorig@set@color
+  \let\reset@color\beamerorig@reset@color}
+\makeatother
+\SoulColor
+\lstset{
+    breaklines,
+    basicstyle=\ttfamily\small,
+    backgroundcolor=\color{light-gray},
+    keywordstyle=\color{blue},
+    stringstyle=\color{green!50!black},
+    commentstyle=\color{gray}\ttfamily,
+    moredelim=**[is][\color{red}]{@}{@},
+    numbers=none,
+    numberstyle=\tiny,
+    numberblanklines=true,
+    stepnumber=1,
+    tabsize=4,
+    numbersep=10pt,
+    xleftmargin=0pt,
+    showstringspaces=false,
+}
+\setlength{\fboxsep}{0pt}
+\usepackage{polyglossia}
+\setmainlanguage[babelshorthands,
+                 spelling = new]{german}
+
+\setcounter{tocdepth}{1} % Only sections in table of contents
+
+\title[Statische Analyse]{Erstellung eines Frameworks zur statischen Analyse von Quelltexten}
+\author{Jonas A. Wendorf}
+\subject{Masterarbeit}
+\institute{Hochschule Aalen}
+\date{15.~April 2019}
+\titlegraphic{\includegraphics[scale=.3]{htw}}
+
+\begin{document}
+    \AtBeginSection{
+        \begin{frame}
+            \frametitle{Inhalt}
+            \tableofcontents[currentsection]
+        \end{frame}
+    }
+
+    \begin{frame}[plain]
+        \titlepage%
+    \end{frame}
+
+    \begin{frame}
+    	\frametitle{Inhalt}
+        \tableofcontents%
+    \end{frame}
+
+    % Hier eigene Kapitel einfügen
+    \input{tex/Einleitung}
+    \input{tex/Grundlagen}
+    \input{tex/Implementierung}
+    \input{tex/Regeln}
+    \input{tex/Beispiel}
+    \input{tex/Fazit}
+\end{document}

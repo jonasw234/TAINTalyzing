@@ -1,0 +1,51 @@
+\input{tex/pre} % Ausgelagerte Präambel
+
+% Hier können die Informationen über die Ausarbeitung eingetragen werden
+\newcommand*{\Course}{Masterarbeit}
+\newcommand*{\Subject}{Erstellung eines Frameworks zur statischen Analyse von Quelltexten}
+\newcommand*{\Author}{Jonas A. Wendorf}
+\newcommand*{\Matriculation}{51754}
+\newcommand*{\Discipline}{Informatik}
+\newcommand*{\Semester}{3. Mastersemester}
+\newcommand*{\Professor}{Prof.\,Dipl.-Ing.~Roland Hellmann}
+\newcommand*{\CoProfessor}{Prof.\,Dr.~Rainer Werthebach}
+\newcommand*{\Deadline}{08.~April 2019}
+\newcommand*{\Location}{Aalen}
+
+% Um die Übersetzung zu beschleunigen, kann man hiermit nur Teile der Ausarbeitung übersetzen lassen
+% \includeonly{tex/Evaluierung}
+
+% Die folgenden Zeilen können für die Druckausgabe verwendet werden
+% \KOMAoptions{BCOR     = 0mm,       % Hier die durchschnittliche Länge eintragen, die durch die
+%                                    % Bindung verloren geht
+%              headings = openright, % Kapitel starten immer auf der rechten Seite
+%              twoside}
+% \ofoot*{\pagemark}
+% \ifoot*{}
+% \renewcommand*{\Signature}{\rule{6cm}{1pt}\\Unterschrift}
+% \graphicspath{{img/}{img/Druck/}{img/Digital/}}
+% \hypersetup{colorlinks=false}
+
+% Metadaten für das PDF
+\hypersetup{
+    pdfinfo={
+        Author={\Author\ (Matrikelnummer: \Matriculation)},
+        Title={\Subject},
+        Subject={\Course},
+        Keywords={\Course, \Course, \Author, \Discipline, \Professor, \CoProfessor, \Location, statische Analyse, Framework, TAINTalyzing, Schwachstellensuche}
+    }
+}
+
+\begin{document}
+    \include{tex/titlepage}      % Titelseite
+    \include{tex/eidesstattlich} % Eidesstattliche Erklärung
+    \include{tex/frontmatter}    % Verzeichnisse, Vorbereitung Layout eigene Kapitel
+
+    % Hier eigene Kapitel einfügen
+    \include{tex/Einleitung}
+    \include{tex/Grundlagen}
+    \include{tex/Umsetzung}
+%    \include{tex/Regelsaetze}
+    \include{tex/Test}
+    \include{tex/Evaluierung}
+\end{document}

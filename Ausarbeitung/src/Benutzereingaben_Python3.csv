@@ -1,0 +1,2 @@
+Objekttyp;Funktionsname;Parameter;Parameterwert;Kommentar
+urlparse;query;None;None;GET Request bei Nutzung von urlparse

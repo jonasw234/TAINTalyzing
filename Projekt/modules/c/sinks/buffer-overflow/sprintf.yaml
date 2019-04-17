@@ -1,0 +1,6 @@
+---
+null:
+    Methods:
+    - Methodname: sprintf
+      Parameters: [null, null, $TAINT]
+      Comment: No check for destination buffer size, use snprintf instead.

@@ -1,0 +1,6 @@
+---
+null:
+    Methods:
+    - Methodname: system
+      Parameters: [$TAINT]
+      Comment: Executes arbitrary system commands.

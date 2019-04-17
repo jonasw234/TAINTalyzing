@@ -1,0 +1,8 @@
+taint module
+============
+
+.. automodule:: taint
+    :members:
+    :private-members:
+    :undoc-members:
+    :show-inheritance:

@@ -1,0 +1,6 @@
+---
+null:
+    Methods:
+    - Methodname: input
+      Parameters: []
+      Comment: Arbitrary code execution in Python 2.

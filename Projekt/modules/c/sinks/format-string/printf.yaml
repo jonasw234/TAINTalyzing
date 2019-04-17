@@ -1,0 +1,6 @@
+---
+null:
+    Methods:
+    - Methodname: printf
+      Parameters: [$TAINT]
+      Comment: Format string vulnerability.

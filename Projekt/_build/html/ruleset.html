@@ -1,0 +1,279 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>ruleset module &#8212; TAINTalyzing 2019-04-08 documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="module-ruleset">
+<span id="ruleset-module"></span><h1>ruleset module<a class="headerlink" href="#module-ruleset" title="Permalink to this headline">¶</a></h1>
+<p>A module to hold rules for the analysis of a module.</p>
+<dl class="class">
+<dt id="ruleset.Ruleset">
+<em class="property">class </em><code class="descclassname">ruleset.</code><code class="descname">Ruleset</code><span class="sig-paren">(</span><em>module: str</em><span class="sig-paren">)</span><a class="headerlink" href="#ruleset.Ruleset" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Holds all rules for a module.</p>
+<p class="rubric">Methods</p>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="#ruleset.Ruleset.add_sanitizer" title="ruleset.Ruleset.add_sanitizer"><code class="xref py py-obj docutils literal notranslate"><span class="pre">add_sanitizer</span></code></a>(method,&nbsp;sink,&nbsp;sink_method_idx,&nbsp;…)</td>
+<td>Add a new sanitizer to a sink.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#ruleset.Ruleset.add_sink" title="ruleset.Ruleset.add_sink"><code class="xref py py-obj docutils literal notranslate"><span class="pre">add_sink</span></code></a>(method,&nbsp;sink)</td>
+<td>Add a new sink to the list.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#ruleset.Ruleset.add_source" title="ruleset.Ruleset.add_source"><code class="xref py py-obj docutils literal notranslate"><span class="pre">add_source</span></code></a>(method,&nbsp;source)</td>
+<td>Add a new source to the list.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#ruleset.Ruleset.notify_observers" title="ruleset.Ruleset.notify_observers"><code class="xref py py-obj docutils literal notranslate"><span class="pre">notify_observers</span></code></a>(method,&nbsp;changed_sanitizer,&nbsp;…)</td>
+<td>Notify observers about changes in sinks or sanitizers.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#ruleset.Ruleset.register_observer" title="ruleset.Ruleset.register_observer"><code class="xref py py-obj docutils literal notranslate"><span class="pre">register_observer</span></code></a>(observer)</td>
+<td>Register an observer for sources and sinks.</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="ruleset.Ruleset._Ruleset__load_sinks">
+<code class="descname">_Ruleset__load_sinks</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ruleset.Ruleset._Ruleset__load_sinks" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load sinks for this ruleset.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ruleset.Ruleset._Ruleset__load_sources">
+<code class="descname">_Ruleset__load_sources</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ruleset.Ruleset._Ruleset__load_sources" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load sources for this ruleset.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ruleset.Ruleset.add_sanitizer">
+<code class="descname">add_sanitizer</code><span class="sig-paren">(</span><em>method: method.Method</em>, <em>sink: sink.Sink</em>, <em>sink_method_idx: int</em>, <em>sanitizer: dict</em>, <em>level: int = 0</em><span class="sig-paren">)</span><a class="headerlink" href="#ruleset.Ruleset.add_sanitizer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add a new sanitizer to a sink.
+New sanitizers are only relevant if a method’s parameters are used in a sanitizer.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>method</strong> <span class="classifier-delimiter">:</span> <span class="classifier">Method</span></dt>
+<dd><p class="first last">The method where the sanitizer was added</p>
+</dd>
+<dt><strong>sink</strong> <span class="classifier-delimiter">:</span> <span class="classifier">Sink</span></dt>
+<dd><p class="first last">The sink to add the sanitizer to</p>
+</dd>
+<dt><strong>sink_method_idx</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">The index of the method for which to add the new sanitizer</p>
+</dd>
+<dt><strong>sanitizer</strong> <span class="classifier-delimiter">:</span> <span class="classifier">dict</span></dt>
+<dd><p class="first last">A dictionary definition of the sanitizer as defined in the ruleset</p>
+</dd>
+<dt><strong>level</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int, optional</span></dt>
+<dd><p class="first last">The depth of the nesting before the sanitizer is reached (sanitizers defined in the
+rules get a level of 0, sanitizers that call those get a level of 1, sanitizers that
+call those get a level of 2 and so on)</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="ruleset.Ruleset.add_sink">
+<code class="descname">add_sink</code><span class="sig-paren">(</span><em>method: method.Method</em>, <em>sink: dict</em><span class="sig-paren">)</span><a class="headerlink" href="#ruleset.Ruleset.add_sink" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add a new sink to the list.
+New sinks are only relevant if a method’s parameters are used in a sink.
+The same sanitizers are used from the original sink.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>method</strong> <span class="classifier-delimiter">:</span> <span class="classifier">Method</span></dt>
+<dd><p class="first last">The method where the sink was added</p>
+</dd>
+<dt><strong>sink</strong> <span class="classifier-delimiter">:</span> <span class="classifier">dict</span></dt>
+<dd><p class="first last">A dictionary definition of the sink as defined in the ruleset</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="ruleset.Ruleset.add_source">
+<code class="descname">add_source</code><span class="sig-paren">(</span><em>method: method.Method</em>, <em>source: dict</em><span class="sig-paren">)</span><a class="headerlink" href="#ruleset.Ruleset.add_source" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add a new source to the list.
+New sources are only relevant if either a method’s parameters are used in a source or their
+results are returned.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>method</strong> <span class="classifier-delimiter">:</span> <span class="classifier">Method</span></dt>
+<dd><p class="first last">The method where the source was added</p>
+</dd>
+<dt><strong>source</strong> <span class="classifier-delimiter">:</span> <span class="classifier">dict</span></dt>
+<dd><p class="first last">A dictionary definition of the source as defined in the ruleset</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ruleset.Ruleset.logger">
+<code class="descname">logger</code><em class="property"> = &lt;Logger taintalyzing (WARNING)&gt;</em><a class="headerlink" href="#ruleset.Ruleset.logger" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ruleset.Ruleset.notify_observers">
+<code class="descname">notify_observers</code><span class="sig-paren">(</span><em>method: method.Method</em>, <em>changed_sanitizer: Optional[bool] = None</em>, <em>new_source: bool = False</em><span class="sig-paren">)</span><a class="headerlink" href="#ruleset.Ruleset.notify_observers" title="Permalink to this definition">¶</a></dt>
+<dd><p>Notify observers about changes in sinks or sanitizers.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>method</strong> <span class="classifier-delimiter">:</span> <span class="classifier">Method</span></dt>
+<dd><p class="first last">The method that was updated</p>
+</dd>
+<dt><strong>changed_sanitizer</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool, optional</span></dt>
+<dd><p class="first last">A sanitizer was changed</p>
+</dd>
+<dt><strong>new_source</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool, optional</span></dt>
+<dd><p class="first last">A new source was added</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="ruleset.Ruleset.register_observer">
+<code class="descname">register_observer</code><span class="sig-paren">(</span><em>observer</em><span class="sig-paren">)</span><a class="headerlink" href="#ruleset.Ruleset.register_observer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Register an observer for sources and sinks.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>observer</strong></dt>
+<dd><p class="first last">Object that wants to be notified about changes in sources, sinks or sanitizers</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">TAINTalyzing</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2019, Jonas A. Wendorf.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.4</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/ruleset.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

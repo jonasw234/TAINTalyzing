@@ -1,0 +1,3 @@
+107*30, Fira Code Medium 28 Punkt
+Fensterhintergrund: 248/248/242
+Fenstertext: 28/28/28

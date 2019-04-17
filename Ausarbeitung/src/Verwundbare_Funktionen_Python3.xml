@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Template>
+  <Funktionen>
+    <Funktionsname>substitute</Funktionsname>
+    <html>
+      <Funktionsname>escape($VARIABLE, $QUOTE)</Funktionsname>
+      <Parameter>$QUOTE</Parameter>
+      <Parameterwert>/(quote=)?True/</Parameterwert>
+    </html>
+    <Kommentar>Gibt parametrisierte Texte aus, Gefahr von XSS</Kommentar>
+  </Funktionen>
+</Template>

@@ -1,0 +1,6 @@
+---
+null:
+    Methods:
+    - Methodname: strcpy
+      Parameters: [null, $TAINT]
+      Comment: No check for destination buffer size, use strncpy instead.

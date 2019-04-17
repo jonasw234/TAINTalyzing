@@ -1,0 +1,6 @@
+---
+null:
+    Methods:
+    - Methodname: getchar
+      Parameters: []
+      Comment: Reads a single character from stdin

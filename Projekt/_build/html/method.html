@@ -1,0 +1,253 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>method module &#8212; TAINTalyzing 2019-04-08 documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="module-method">
+<span id="method-module"></span><h1>method module<a class="headerlink" href="#module-method" title="Permalink to this headline">¶</a></h1>
+<p>A module to hold information about methods.</p>
+<dl class="class">
+<dt id="method.Method">
+<em class="property">class </em><code class="descclassname">method.</code><code class="descname">Method</code><span class="sig-paren">(</span><em>start: int</em>, <em>end: int</em>, <em>method_name: str</em>, <em>parameters: Optional[dict] = None</em><span class="sig-paren">)</span><a class="headerlink" href="#method.Method" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Representation of a method.</p>
+<p class="rubric">Methods</p>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="#method.Method.add_sanitizers" title="method.Method.add_sanitizers"><code class="xref py py-obj docutils literal notranslate"><span class="pre">add_sanitizers</span></code></a>(sanitizers)</td>
+<td>Add sanitizers for this method.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#method.Method.add_sinks" title="method.Method.add_sinks"><code class="xref py py-obj docutils literal notranslate"><span class="pre">add_sinks</span></code></a>(sinks)</td>
+<td>Add sinks for this method.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#method.Method.add_sources" title="method.Method.add_sources"><code class="xref py py-obj docutils literal notranslate"><span class="pre">add_sources</span></code></a>(sources)</td>
+<td>Add sources for this method.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#method.Method.add_taints" title="method.Method.add_taints"><code class="xref py py-obj docutils literal notranslate"><span class="pre">add_taints</span></code></a>(taints)</td>
+<td>Add taints for this method.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#method.Method.add_variables" title="method.Method.add_variables"><code class="xref py py-obj docutils literal notranslate"><span class="pre">add_variables</span></code></a>(variables)</td>
+<td>Add variables for this method.</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="method.Method._Method__add_new">
+<code class="descname">_Method__add_new</code><span class="sig-paren">(</span><em>original: dict</em>, <em>from_: dict</em><span class="sig-paren">)</span><a class="headerlink" href="#method.Method._Method__add_new" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add new elements to <cite>original</cite> while avoiding duplicates.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>original</strong> <span class="classifier-delimiter">:</span> <span class="classifier">dict</span></dt>
+<dd><p class="first last">The original dict to be updated</p>
+</dd>
+<dt><strong>from_</strong> <span class="classifier-delimiter">:</span> <span class="classifier">dict</span></dt>
+<dd><p class="first last">Dict that stores the new elements</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="method.Method.add_sanitizers">
+<code class="descname">add_sanitizers</code><span class="sig-paren">(</span><em>sanitizers: dict</em><span class="sig-paren">)</span><a class="headerlink" href="#method.Method.add_sanitizers" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add sanitizers for this method.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>sanitizers</strong> <span class="classifier-delimiter">:</span> <span class="classifier">dict</span></dt>
+<dd><p class="first last">A dict of sanitizers to be added in the form of sanitizer: call</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="method.Method.add_sinks">
+<code class="descname">add_sinks</code><span class="sig-paren">(</span><em>sinks: dict</em><span class="sig-paren">)</span><a class="headerlink" href="#method.Method.add_sinks" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add sinks for this method.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>sinks</strong> <span class="classifier-delimiter">:</span> <span class="classifier">dict</span></dt>
+<dd><p class="first last">A dict of sinks to be added in the form of sink: call</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="method.Method.add_sources">
+<code class="descname">add_sources</code><span class="sig-paren">(</span><em>sources: dict</em><span class="sig-paren">)</span><a class="headerlink" href="#method.Method.add_sources" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add sources for this method.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>sources</strong> <span class="classifier-delimiter">:</span> <span class="classifier">dict</span></dt>
+<dd><p class="first last">A dict of sources to be added in the form of source: call</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="method.Method.add_taints">
+<code class="descname">add_taints</code><span class="sig-paren">(</span><em>taints: dict</em><span class="sig-paren">)</span><a class="headerlink" href="#method.Method.add_taints" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add taints for this method.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>taints</strong> <span class="classifier-delimiter">:</span> <span class="classifier">dict</span></dt>
+<dd><p class="first last">A dict of taints to be added in the form of taints: call</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="method.Method.add_variables">
+<code class="descname">add_variables</code><span class="sig-paren">(</span><em>variables: dict</em><span class="sig-paren">)</span><a class="headerlink" href="#method.Method.add_variables" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add variables for this method.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>variables</strong> <span class="classifier-delimiter">:</span> <span class="classifier">dict</span></dt>
+<dd><p class="first last">A dict of variables to be added in the form of variable: [calls]</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">TAINTalyzing</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2019, Jonas A. Wendorf.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.4</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/method.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

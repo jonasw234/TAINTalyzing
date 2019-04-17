@@ -1,0 +1,123 @@
+\chapter{Evaluierung}
+    Im Folgenden werden die in dieser Masterarbeit erreichten Ergebnisse zusammengefasst,
+    Empfehlungen für den Einsatz des entwickelten Frameworks vorgestellt und
+    es wird ein Ausblick gegeben auf mögliche weitere Entwicklungen des Frameworks,
+    die aufgrund der zeitlichen Begrenzung und
+    dem Universalitätsgedanken nicht behandelt werden konnten.
+
+    \section{Erreichte Ergebnisse}
+        In dieser Ausarbeitung wurde ein Framework erstellt,
+        welches zur statischen Analyse von Quelltexten dient,
+        um Sicherheitslücken zu entdecken.
+
+        Das Besondere an diesem Framework ist,
+        dass versucht wurde,
+        es möglichst universell einsetzbar zu gestalten,
+        sodass es späteren Anwendern möglichst leicht sein sollte,
+        das Framework nicht nur mit eigenen Regeln,
+        sondern auch mit eigenen Grammatiken für gänzlich neue Programmiersprachen zu erweitern.
+
+        Als Beispiele wurden drei Module für Programmiersprachen implementiert,
+        die jeweils aus den Grammatiken zur Beschreibung der Syntax sowie
+        aus den Regeln zur Beschreibung der Quellen,
+        Senken und
+        Absicherungen bestehen.
+
+        Die Grammatik für C ist hierbei die ausgereifteste,
+        mit der die meisten Syntaxelemente gut erkannt werden können.
+
+        Bei der Grammatik für
+        \gls{PHP} soll vor allem gezeigt werden,
+        wie Grammatiken für objektorientierte Programmiersprachen erstellt werden können.
+
+        Die Grammatik für Python hat als Besonderheit,
+        dass in Python nicht geschweifte Klammern,
+        sondern Einrückungen zur Markierung von Codeblöcken benutzt werden.
+
+        Mit allen drei Grammatiken ist es möglich,
+        nicht nur Schwachstellen in Quelltexten aufzudecken,
+        sondern diese Schwachstellen auch über mehrere Funktionsaufrufe hinweg zu verfolgen und
+        mit anderen Funktionen zu verknüpfen,
+        wie jeweils mit Testfällen in der Datei
+        \filename{test.py} nachgewiesen wurde.
+
+        Dies zeigt einen weiteren Vorteil des Frameworks: Es ist nicht notwendig,
+        vollständige Grammatiken für eine Sprache zu erstellen,
+        die jedes einzelne Konstrukt genau verstehen.
+        Stattdessen lassen sich unvollständige und
+        damit auch robustere Grammatiken erstellen,
+        mittels derer bereits einige Sicherheitslücken gefunden werden können.
+
+        Ob die Benutzer letztlich mehr Wert auf Genauigkeit bei der Erstellung der Grammatiken legen,
+        was mit höherem Arbeitsaufwand und
+        geringerer Robustheit gegenüber Änderungen an der Syntax der Programmiersprache einherginge,
+        bleibt ihnen überlassen.
+
+        Es ist für jedes Modul möglich,
+        mittels einfacher Regeln Funktionen zu beschreiben,
+        welche als Benutzereingabe,
+        potenziell verwundbare Funktion oder
+        als Absicherung einer verwundbaren Funktion dienen.
+
+        Im Anschluss untersucht das Framework dann selbstständig die angegebenen Pfade auf diese verwundbaren Funktionen und
+        gibt an,
+        ob diese mit potenziell benutzerkontrollierten Eingaben aufgerufen werden,
+        was zu einer Kompromittierung des Systems führen könnte.
+
+        Durch die Ausgabe des Reports in verschiedenen Formaten ist eine einfache Weiterverarbeitung und
+        Anpassung möglich,
+        was besonders den Einsatz im Geschäftsumfeld erleichtern sollte.
+
+    \section{Empfehlungen}
+        Das erstellte Framework kann zwar dabei helfen,
+        Sicherheitslücken in Quelltexten zu finden,
+        bietet aber keine absolute Sicherheit,
+        dass alle Schwachstellen entdeckt werden.
+
+        Dies liegt zum einen daran,
+        dass die Schwachstellensuche stark von der Anzahl und
+        Qualität der genutzten Regelsätze abhängt,
+        zum anderen aber auch,
+        weil es mittels statischer Analyse nicht möglich ist,
+        in jedem Fall alle Schwachstellen in einem Quelltext aufzudecken,
+        wie bereits in
+        \vref{Satz von Rice} erläutert wurde.
+
+        Stattdessen sollten Anwender zusätzlich immer auch eine manuelle Analyse durchführen und
+        die Resultate des Frameworks manuell prüfen.
+
+        Es kann jedoch sehr hilfreich sein,
+        automatisierte Sicherheitsscans,
+        wie sie dieses Framework bietet,
+        in den Entwicklungsprozess mit einzubeziehen,
+        um Schwachstellen möglichst frühzeitig und
+        kostensparend zu entdecken und
+        zu beheben.
+
+        Da das Framework auch in einer Docker"=Umgebung läuft,
+        sollte es immer möglich sein,
+        das Framework auf Entwicklungsservern einzusetzen.
+
+    \section{Ausblick}
+        Da das Framework theoretisch beliebige Programmiersprachen unterstützt,
+        sollten im nächsten Schritt die Programmiersprachen ermittelt werden,
+        die in der Praxis zum einen am häufigsten eingesetzt werden und
+        zum anderen am meisten von einem automatisierten Sicherheitsscan profitieren.
+
+        Anschließend sollten Grammatiken und
+        Regelsätze für diese Programmiersprachen erstellt werden.
+
+        Nach Möglichkeit sollten diese Grammatiken und
+        Regeln in einem zentralen Repository gespeichert werden,
+        sodass später nicht mehr jeder Anwender seine eigenen Grammatiken und
+        Regeln schreiben muss,
+        sondern auf der Arbeit von anderen aufbauen kann,
+        wodurch sich die Qualität der Analyse stetig verbessert.
+
+        Die statische Analyse alleine kann nicht sämtliche Sicherheitslücken in einem System finden,
+        allerdings ist es hiermit möglich,
+        auch selten manuell geprüfte Codezweige abzudecken,
+        sodass sie nach Möglichkeit immer zusätzlich zur dynamischen Analyse eingesetzt werden sollte.
+
+        Mit dem hier vorgestellten Framework sind Benutzer somit in der Lage,
+        bereits mit wenig Aufwand ihre Programme sicherer zu gestalten.

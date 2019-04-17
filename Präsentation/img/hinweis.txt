@@ -1,0 +1,3 @@
+Die Dateien init-taint.pdf und main-sink.pdf wurden in Photoshop erstellt, um die in der HTML-Ausgabe enthaltenen Informationen als Vektorgrafiken zu erhalten. Die Quelldateien liegen bei, die Informationen entsprechen exakt denen, die vom Framework im Report ausgegeben werden.
+
+Die Quelle für SQLi-RegEx.png steht in der Ausarbeitung, wo das Bild in »2.5.2.1 Einfache Stringsuche« verwendet wird.

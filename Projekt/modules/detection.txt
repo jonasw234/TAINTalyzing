@@ -1,0 +1,4 @@
+c: .c, .h; C source
+cpp: .cc, .cpp, .hpp; C source
+php: .php; PHP script
+python: .py; Python script

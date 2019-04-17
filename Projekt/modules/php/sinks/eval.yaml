@@ -1,0 +1,6 @@
+---
+null:
+    Methods:
+    - Methodname: eval
+      Parameters: [$TAINT]
+      Comment: Arbitrary code execution.

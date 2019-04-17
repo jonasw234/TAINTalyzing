@@ -1,0 +1,18 @@
+{
+    "Template":
+    {
+        "Funktionen":
+        [
+            {
+                "Funktionsname": "substitute",
+                "html":
+                {
+                    "Funktionsname": "escape($VARIABLE, $QUOTE)",
+                    "Parameter": "$QUOTE",
+                    "Parameterwert": "/(quote=)?True/"
+                },
+                "Kommentar": "Gibt parametrisierte Texte aus, Gefahr von XSS"
+            }
+        ]
+    }
+}

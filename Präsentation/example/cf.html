@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>TAINTalyzing report</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <img src="logo.png" alt="Logo">
+    <h1 id="begin">TAINTalyzing report created on Su Mar 31 15:00:00 2019</h1>
+    <h2 class="new-file">Start of analysis for testfiles\cfiles\cf.c:</h2>
+    <p class="module">The filetype was detected as c.</p>
+    <h3 class="method">Analysis results for method &quot;init&quot; (lines 134 to 171).</h3>
+    <div class="taints">
+        <p>The following taints were detected:</p>
+        <ul>
+            <li class="taint">In line 155 a call with potentially user controlled input is made to sprintf.<br>
+The following comment is linked to this sink: No check for destination buffer size, use snprintf instead.<br>
+No sanitizer detected.<br>
+Severity level: 100%.<br>
+In line 157 a call with potentially user controlled input is made to sprintf.<br>
+The following comment is linked to this sink: No check for destination buffer size, use snprintf instead.<br>
+No sanitizer detected.<br>
+Severity level: 100%.<br>
+In line 159 a call with potentially user controlled input is made to sprintf.<br>
+The following comment is linked to this sink: No check for destination buffer size, use snprintf instead.<br>
+No sanitizer detected.<br>
+Severity level: 100%.<br>
+In line 161 a call with potentially user controlled input is made to sprintf.<br>
+The following comment is linked to this sink: No check for destination buffer size, use snprintf instead.<br>
+No sanitizer detected.<br>
+Severity level: 100%.<br>
+In line 145 a call with potentially user controlled input is made to sprintf.<br>
+The following comment is linked to this sink: No check for destination buffer size, use snprintf instead.<br>
+No sanitizer detected.<br>
+Severity level: 100%.<br>
+            </li>
+        </ul>
+    </div>
+     <div class="sinks">
+        <p>The following sinks were detected:</p>
+        <ul>
+            <li class="sink">
+In line 149 a call without any detected user controlled input is made to sprintf.<br>
+The following comment is linked to this sink: No check for destination buffer size, use snprintf instead.<br>
+Severity level: 50%.<br>
+            </li>
+            <li class="sink">
+In line 163 a call without any detected user controlled input is made to sprintf.<br>
+The following comment is linked to this sink: No check for destination buffer size, use snprintf instead.<br>
+Severity level: 50%.<br>
+            </li>
+         </ul>
+    </div>
+    <h3 class="method">Analysis results for method &quot;openBookmarkDir&quot; (lines 270 to 288).</h3>
+    <div class="taints">
+        <p>The following taints were detected:</p>
+        <ul>
+            <li class="taint">In line 281 a call with potentially user controlled input is made to strcpy.<br>
+The following comment is linked to this sink: No check for destination buffer size, use strncpy instead.<br>
+No sanitizer detected.<br>
+Severity level: 100%.<br>
+            </li>
+        </ul>
+    </div>
+    <h3 class="method">Analysis results for method &quot;create_newwin&quot; (lines 329 to 376).</h3>
+     <div class="sinks">
+        <p>The following sinks were detected:</p>
+        <ul>
+            <li class="sink">
+In line 367 a call without any detected user controlled input is made to sprintf.<br>
+The following comment is linked to this sink: No check for destination buffer size, use snprintf instead.<br>
+Severity level: 50%.<br>
+            </li>
+            <li class="sink">
+In line 375 a call without any detected user controlled input is made to strcpy.<br>
+The following comment is linked to this sink: No check for destination buffer size, use strncpy instead.<br>
+Severity level: 50%.<br>
+            </li>
+         </ul>
+    </div>
+    <h3 class="method">Analysis results for method &quot;openFile&quot; (lines 382 to 400).</h3>
+     <div class="sinks">
+        <p>The following sinks were detected:</p>
+        <ul>
+            <li class="sink">
+In line 391 a call without any detected user controlled input is made to system.<br>
+The following comment is linked to this sink: Executes arbitrary system commands.<br>
+Severity level: 50%.<br>
+            </li>
+         </ul>
+    </div>
+    <h3 class="method">Analysis results for method &quot;checkClipboard&quot; (lines 407 to 426).</h3>
+    <div class="taints">
+        <p>The following taints were detected:</p>
+        <ul>
+            <li class="taint">In line 412 a call with potentially user controlled input is made to sprintf.<br>
+The following comment is linked to this sink: No check for destination buffer size, use snprintf instead.<br>
+No sanitizer detected.<br>
+Severity level: 100%.<br>
+            </li>
+        </ul>
+    </div>
+    <h3 class="method">Analysis results for method &quot;removeClipboard&quot; (lines 449 to 455).</h3>
+     <div class="sinks">
+        <p>The following sinks were detected:</p>
+        <ul>
+            <li class="sink">
+In line 454 a call without any detected user controlled input is made to system.<br>
+The following comment is linked to this sink: Executes arbitrary system commands.<br>
+Severity level: 50%.<br>
+            </li>
+         </ul>
+    </div>
+    <h3 class="method">Analysis results for method &quot;getImgPreview&quot; (lines 473 to 521).</h3>
+    <div class="taints">
+        <p>The following taints were detected:</p>
+        <ul>
+            <li class="taint">In line 491 a call with potentially user controlled input is made to sprintf.<br>
+The following comment is linked to this sink: No check for destination buffer size, use snprintf instead.<br>
+No sanitizer detected.<br>
+Severity level: 100%.<br>
+            </li>
+        </ul>
+    </div>
+     <div class="sinks">
+        <p>The following sinks were detected:</p>
+        <ul>
+            <li class="sink">
+In line 519 a call without any detected user controlled input is made to system.<br>
+The following comment is linked to this sink: Executes arbitrary system commands.<br>
+Severity level: 50%.<br>
+            </li>
+         </ul>
+    </div>
+    <h3 class="method">Analysis results for method &quot;getVidPreview&quot; (lines 555 to 565).</h3>
+    <div class="taints">
+        <p>The following taints were detected:</p>
+        <ul>
+            <li class="taint">In line 558 a call with potentially user controlled input is made to sprintf.<br>
+The following comment is linked to this sink: No check for destination buffer size, use snprintf instead.<br>
+No sanitizer detected.<br>
+Severity level: 100%.<br>
+In line 561 a call with potentially user controlled input is made to sprintf.<br>
+The following comment is linked to this sink: No check for destination buffer size, use snprintf instead.<br>
+No sanitizer detected.<br>
+Severity level: 100%.<br>
+In line 562 a call with potentially user controlled input is made to sprintf.<br>
+The following comment is linked to this sink: No check for destination buffer size, use snprintf instead.<br>
+No sanitizer detected.<br>
+Severity level: 100%.<br>
+            </li>
+            <li class="taint">In line 560 a call with potentially user controlled input is made to system.<br>
+The following comment is linked to this sink: Executes arbitrary system commands.<br>
+No sanitizer detected.<br>
+Severity level: 100%.<br>
+            </li>
+        </ul>
+    </div>
+     <div class="sinks">
+        <p>The following sinks were detected:</p>
+        <ul>
+            <li class="sink">
+In line 563 a call without any detected user controlled input is made to system.<br>
+The following comment is linked to this sink: Executes arbitrary system commands.<br>
+Severity level: 50%.<br>
+            </li>
+         </ul>
+    </div>
+    <h3 class="method">Analysis results for method &quot;getArchivePreview&quot; (lines 571 to 578).</h3>
+    <div class="taints">
+        <p>The following taints were detected:</p>
+        <ul>
+            <li class="taint">In line 574 a call with potentially user controlled input is made to sprintf.<br>
+The following comment is linked to this sink: No check for destination buffer size, use snprintf instead.<br>
+No sanitizer detected.<br>
+Severity level: 100%.<br>
+In line 576 a call with potentially user controlled input is made to sprintf.<br>
+The following comment is linked to this sink: No check for destination buffer size, use snprintf instead.<br>
+No sanitizer detected.<br>
+Severity level: 100%.<br>
+            </li>
+            <li class="taint">In line 575 a call with potentially user controlled input is made to system.<br>
+The following comment is linked to this sink: Executes arbitrary system commands.<br>
+No sanitizer detected.<br>
+Severity level: 100%.<br>
+            </li>
+        </ul>
+    </div>
+    <h3 class="method">Analysis results for method &quot;getFileType&quot; (lines 595 to 599).</h3>
+    <div class="taints">
+        <p>The following taints were detected:</p>
+        <ul>
+            <li class="taint">In line 597 a call with potentially user controlled input is made to strcpy.<br>
+The following comment is linked to this sink: No check for destination buffer size, use strncpy instead.<br>
+No sanitizer detected.<br>
+Severity level: 100%.<br>
+            </li>
+        </ul>
+    </div>
+    <h3 class="method">Analysis results for method &quot;getPreview&quot; (lines 605 to 619).</h3>
+    <div class="taints">
+        <p>The following taints were detected:</p>
+        <ul>
+            <li class="taint">In line 616 a call with potentially user controlled input is made to getArchivePreview.<br>
+The following comment is linked to this sink: Calls sprintf from None.<br>
+No sanitizer detected.<br>
+Severity level: 100%.<br>
+            </li>
+        </ul>
+    </div>
+    <h3 class="method">Analysis results for method &quot;copyFiles&quot; (lines 701 to 720).</h3>
+    <div class="taints">
+        <p>The following taints were detected:</p>
+        <ul>
+            <li class="taint">In line 716 a call with potentially user controlled input is made to system.<br>
+The following comment is linked to this sink: Executes arbitrary system commands.<br>
+No sanitizer detected.<br>
+Severity level: 100%.<br>
+            </li>
+        </ul>
+    </div>
+    <h3 class="method">Analysis results for method &quot;removeFiles&quot; (lines 725 to 743).</h3>
+    <div class="taints">
+        <p>The following taints were detected:</p>
+        <ul>
+            <li class="taint">In line 738 a call with potentially user controlled input is made to system.<br>
+The following comment is linked to this sink: Executes arbitrary system commands.<br>
+No sanitizer detected.<br>
+Severity level: 100%.<br>
+            </li>
+        </ul>
+    </div>
+     <div class="sinks">
+        <p>The following sinks were detected:</p>
+        <ul>
+            <li class="sink">
+In line 737 a call without any detected user controlled input is made to sprintf.<br>
+The following comment is linked to this sink: No check for destination buffer size, use snprintf instead.<br>
+Severity level: 50%.<br>
+            </li>
+         </ul>
+    </div>
+    <h3 class="method">Analysis results for method &quot;renameFiles&quot; (lines 749 to 801).</h3>
+     <div class="sinks">
+        <p>The following sinks were detected:</p>
+        <ul>
+            <li class="sink">
+In line 768 a call without any detected user controlled input is made to system.<br>
+The following comment is linked to this sink: Executes arbitrary system commands.<br>
+Severity level: 50%.<br>
+            </li>
+            <li class="sink">
+In line 772 a call without any detected user controlled input is made to system.<br>
+The following comment is linked to this sink: Executes arbitrary system commands.<br>
+Severity level: 50%.<br>
+            </li>
+            <li class="sink">
+In line 789 a call without any detected user controlled input is made to system.<br>
+The following comment is linked to this sink: Executes arbitrary system commands.<br>
+Severity level: 50%.<br>
+            </li>
+            <li class="sink">
+In line 798 a call without any detected user controlled input is made to system.<br>
+The following comment is linked to this sink: Executes arbitrary system commands.<br>
+Severity level: 50%.<br>
+            </li>
+         </ul>
+    </div>
+    <h3 class="method">Analysis results for method &quot;moveFiles&quot; (lines 807 to 826).</h3>
+    <div class="taints">
+        <p>The following taints were detected:</p>
+        <ul>
+            <li class="taint">In line 821 a call with potentially user controlled input is made to system.<br>
+The following comment is linked to this sink: Executes arbitrary system commands.<br>
+No sanitizer detected.<br>
+Severity level: 100%.<br>
+            </li>
+        </ul>
+    </div>
+    <h3 class="method">Analysis results for method &quot;main&quot; (lines 942 to 1445).</h3>
+    <p class="complexity">Method has a cyclomatic complexity of 92.</p>
+    <div class="taints">
+        <p>The following taints were detected:</p>
+        <ul>
+            <li class="taint">In line 1360 a call with potentially user controlled input is made to system.<br>
+The following comment is linked to this sink: Executes arbitrary system commands.<br>
+No sanitizer detected.<br>
+Severity level: 100%.<br>
+In line 1232 a call with potentially user controlled input is made to system.<br>
+The following comment is linked to this sink: Executes arbitrary system commands.<br>
+No sanitizer detected.<br>
+Severity level: 100%.<br>
+In line 1344 a call with potentially user controlled input is made to system.<br>
+The following comment is linked to this sink: Executes arbitrary system commands.<br>
+No sanitizer detected.<br>
+Severity level: 100%.<br>
+            </li>
+            <li class="taint">In line 1342 a call with potentially user controlled input is made to sprintf.<br>
+The following comment is linked to this sink: No check for destination buffer size, use snprintf instead.<br>
+No sanitizer detected.<br>
+Severity level: 100%.<br>
+            </li>
+        </ul>
+    </div>
+     <div class="sinks">
+        <p>The following sinks were detected:</p>
+        <ul>
+            <li class="sink">
+In line 1137 a call without any detected user controlled input is made to strcpy.<br>
+The following comment is linked to this sink: No check for destination buffer size, use strncpy instead.<br>
+Severity level: 50%.<br>
+            </li>
+            <li class="sink">
+In line 1195 a call without any detected user controlled input is made to strcpy.<br>
+The following comment is linked to this sink: No check for destination buffer size, use strncpy instead.<br>
+Severity level: 50%.<br>
+            </li>
+            <li class="sink">
+In line 1218 a call without any detected user controlled input is made to strcpy.<br>
+The following comment is linked to this sink: No check for destination buffer size, use strncpy instead.<br>
+Severity level: 50%.<br>
+            </li>
+            <li class="sink">
+In line 962 a call without any detected user controlled input is made to strcpy.<br>
+The following comment is linked to this sink: No check for destination buffer size, use strncpy instead.<br>
+Severity level: 50%.<br>
+            </li>
+            <li class="sink">
+In line 1033 a call without any detected user controlled input is made to strcpy.<br>
+The following comment is linked to this sink: No check for destination buffer size, use strncpy instead.<br>
+Severity level: 50%.<br>
+            </li>
+            <li class="sink">
+In line 1198 a call without any detected user controlled input is made to strcpy.<br>
+The following comment is linked to this sink: No check for destination buffer size, use strncpy instead.<br>
+Severity level: 50%.<br>
+            </li>
+            <li class="sink">
+In line 1221 a call without any detected user controlled input is made to strcpy.<br>
+The following comment is linked to this sink: No check for destination buffer size, use strncpy instead.<br>
+Severity level: 50%.<br>
+            </li>
+            <li class="sink">
+In line 1122 a call without any detected user controlled input is made to strcpy.<br>
+The following comment is linked to this sink: No check for destination buffer size, use strncpy instead.<br>
+Severity level: 50%.<br>
+            </li>
+            <li class="sink">
+In line 1138 a call without any detected user controlled input is made to strcpy.<br>
+The following comment is linked to this sink: No check for destination buffer size, use strncpy instead.<br>
+Severity level: 50%.<br>
+            </li>
+            <li class="sink">
+In line 1184 a call without any detected user controlled input is made to sprintf.<br>
+The following comment is linked to this sink: No check for destination buffer size, use snprintf instead.<br>
+Severity level: 50%.<br>
+            </li>
+            <li class="sink">
+In line 1230 a call without any detected user controlled input is made to sprintf.<br>
+The following comment is linked to this sink: No check for destination buffer size, use snprintf instead.<br>
+Severity level: 50%.<br>
+            </li>
+            <li class="sink">
+In line 1208 a call without any detected user controlled input is made to sprintf.<br>
+The following comment is linked to this sink: No check for destination buffer size, use snprintf instead.<br>
+Severity level: 50%.<br>
+            </li>
+            <li class="sink">
+In line 1210 a call without any detected user controlled input is made to sprintf.<br>
+The following comment is linked to this sink: No check for destination buffer size, use snprintf instead.<br>
+Severity level: 50%.<br>
+            </li>
+            <li class="sink">
+In line 1021 a call without any detected user controlled input is made to sprintf.<br>
+The following comment is linked to this sink: No check for destination buffer size, use snprintf instead.<br>
+Severity level: 50%.<br>
+            </li>
+            <li class="sink">
+In line 1061 a call without any detected user controlled input is made to getPreview.<br>
+The following comment is linked to this sink: Calls getArchivePreview from None.<br>
+Severity level: 50%.<br>
+            </li>
+            <li class="sink">
+In line 1414 a call without any detected user controlled input is made to system.<br>
+The following comment is linked to this sink: Executes arbitrary system commands.<br>
+Severity level: 50%.<br>
+            </li>
+            <li class="sink">
+In line 1284 a call without any detected user controlled input is made to moveFiles.<br>
+The following comment is linked to this sink: Calls system from None.<br>
+Severity level: 50%.<br>
+            </li>
+            <li class="sink">
+In line 1372 a call without any detected user controlled input is made to getVidPreview.<br>
+The following comment is linked to this sink: Calls sprintf from None.<br>
+Severity level: 50%.<br>
+            </li>
+         </ul>
+    </div>
+    <strong class="end">Don&#x27;t forget that these results are not necessarily complete and could be missing vulnerabilities.  Additional security checks are highly recommended!</strong>
+    <script src="customize.js"></script>
+</body>
+</html>

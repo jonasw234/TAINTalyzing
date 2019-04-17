@@ -1,0 +1,7 @@
+---
+urlparse:
+    Funktionen:
+    - Funktion: query
+      Parameter: 
+      Parameterwert: 
+      Kommentar: GET Request bei Nutzung von urlparse

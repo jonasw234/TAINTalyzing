@@ -1,0 +1,359 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.3.0">
+  <zoom_level>7</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>749</x>
+      <y>609</y>
+      <w>385</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>Main
+bg=yellow
+--
+--
++ main()
++ findFiles(path: String, exclude: String[]): String[]
++ analyzeFiles(filepath: String, exclude: String[], lazy: Boolean, logger: Object): String[]</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>847</x>
+      <y>735</y>
+      <w>266</w>
+      <h>210</h>
+    </coordinates>
+    <panel_attributes>/AbstractGrammar/
+--
++ file: InputFile
++ file_contents: String[]
+--
++ AbstractGrammar(file: InputFile)
+/+ getMethodDefinitions(): String[]/
+/+ getMethodCalls(start: int, end: int): String][]/
+/+ getAssignments(start: int, end: int): String][]/
+/+ getControlStructures(start: int, end: int): String[]/
+/+ getReturns(start: int, end: int): String][]/
++ getClassDefinitions(): String[]
++ getSelfIdentifier(): String
+/+ getMutuallyExclusivePositions(start: int, end: int): String[]/
+/+ getParameters(start: int, end: int): String[]/
++ getDeclarations(start: int, end: int): String[]
+/+ getStatementCount(start: int, end: int): int/
+/+ getEdgeCount(start: int, end: int): int/
++ getGlobalVariables(): String[]</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>357</x>
+      <y>84</y>
+      <w>399</w>
+      <h>161</h>
+    </coordinates>
+    <panel_attributes>Ruleset
+--
++ module: String
++ sources: Source[]
++ sinks: Sink[]
++ observers: Analysis[]
+--
++ Ruleset(module: String)
+- loadSinks()
+- loadSources()
++ addSource(method: Method, source: String[])
++ addSink(method: Method, sink: String[])
++ addSanitizer(method: Method, sink: Sink, sinkMethodIdx: int, sanitizer: String[], level: int)
++ registerObserver(observer: Analysis)
++ notifyObservers(method: Method, changedSanitizer: Boolean, newSource: Source)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>574</x>
+      <y>49</y>
+      <w>21</w>
+      <h>49</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;50.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>672</x>
+      <y>7</y>
+      <w>119</w>
+      <h>49</h>
+    </coordinates>
+    <panel_attributes>Source
+--
++ objectName: String
++ methods: String[]</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>329</x>
+      <y>0</y>
+      <w>140</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>Sanitizer
+--
++ objectName: String
++ methods: Method[]
++ level: int</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>294</x>
+      <y>728</y>
+      <w>441</w>
+      <h>273</h>
+    </coordinates>
+    <panel_attributes>Report
+--
++ analyses: Analysis[]
++ complexity: int
++ indirection: int
++ output: File
++ markup: String[]
+--
++ Report(analyses: Analysis[], complexity: int, indirection: int, output: File)
+- reportBegin(): String
+- reportComplexity(complexity: int): String
+- reportFile(filename: String): String
+- reportMethod(method: Method, file: InputFile): String
+- reportModule(module: String): String
+- reportTaints(): String
+- reportTaint(taint: Taint, file: InputFile, formatter: Function): String
+- reportSinks(): String
+- reportSink(sink: Sink, comment: String, method: Method, file: InputFile, formatter: Function): String
+- reportNothingFound(): String
+- reportEnd(): String
+- reportNeeded(method: Method): Boolean
+- generateReport(formatter: Function)
++ generatePlaintextReport()
++ generateMarkdownReport()
++ generateHTMLReport()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>70</x>
+      <y>280</y>
+      <w>665</w>
+      <h>441</h>
+    </coordinates>
+    <panel_attributes>Analysis
+--
++ grammar: Grammar
++ module: String
++ ruleset: Ruleset
++ methods: String[]
++ classes: String[]
+--
++ Analysis(grammar: Grammar, ruleset: Ruleset)
+- findMethods(): Method[]
++ getClassNameAt(position: int): String
++ unifyObjectName(objectName: String, position: int): String
++ update(method: Method, changedSanitizer: Boolean, newSource: Source)
++ fixObjectNames(method: Method)
++ findSources(method: Method): Source[]
++ findSinks(method: Method): Sink[]
+- buildTaintParameterList(method: Method, parameters: String[], call: String[]): String[], Boolean
++ findSanitizers(method: Method): Sanitizer[]
++ findPathsThrough(method: Method): int[][]
+- correctPositions(call: String[], use: String[], parameters: String[]) -&gt; Boolean
+- inPath(method: Method, statement: String[], path: int[]): Boolean
+- checkSanitizerSubcall(sinkMethod: String[], arg: String[]): String[]
+- checkSourceSubcall(source: String[], arg: String[]): String[]
+- relevantSubcalls(sink: String[], call: String[]): Boolean, String[], String
+- findMatchingSource(source: String[], call: String[], use: String[], userControlledVariables: String[], realSources: String[])
+- verifySources(method: Method, path: int[], userControlledVariables: String[])
+- findUserControlledReturns(method: Method, userControlledVariables: String[], realSources: String[])
+- findUserControlledAssignments(method: Method, path: int[], userControlledVariables: String[]): String[]
+- addSourcesFrom(method: Method)
+- findMatchingSinkMethod(method: Method, sink: String[], call: String[], use: String[], userControlledVariables: String[], taints: String[], realSinks: String[])
+- verifySinks(method: Method, path: int[], userControlledVariables: String[], taints: String[]): String[]
+- checkSubcalls(method: Method, path: int[]): String[]
+- addSinksFrom(method: Method, taints: String[])
++ findTaints(method: Method, path: int[]): String[]
+- getSanitizer(method: Method, possibleSink: Sink, sanitizersForSink: Sanitizer[]): Sanitizer
++ findVariableSource(method: Method, objectName: String, variable: String, start: int): String[]
++ calculateComplexity(method: Method): int
++ methodCalls(method: Method): String[]
++ findGlobalVariables(): String[]
++ followVariables(method: Method): String[]</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>763</x>
+      <y>413</y>
+      <w>238</w>
+      <h>168</h>
+    </coordinates>
+    <panel_attributes>InputFile
+--
++ module: String
++ path: String
++ fallback_module: String
+--
++ InputFile(path: String, fallbackFiletype: String = "")
+_ + readDetectionData()_
++ readFile(): String
++ columnToLine(column: int): int
++ lineToColumn(line: int): int
++ detectFiletype()
+- detectExtension(path: String): String[]
+- detectMagicNumber(path: String): String[]
+- detectHeuristics(possibilities: String[]): String</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>847</x>
+      <y>574</y>
+      <w>21</w>
+      <h>49</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;50.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>966</x>
+      <y>665</y>
+      <w>21</w>
+      <h>84</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;100.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>623</x>
+      <y>238</y>
+      <w>21</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;</panel_attributes>
+    <additional_attributes>10.0;60.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>721</x>
+      <y>49</y>
+      <w>21</w>
+      <h>49</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;50.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>728</x>
+      <y>665</y>
+      <w>119</w>
+      <h>105</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;130.0;150.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>728</x>
+      <y>623</y>
+      <w>35</w>
+      <h>21</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;30.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>777</x>
+      <y>133</y>
+      <w>315</w>
+      <h>231</h>
+    </coordinates>
+    <panel_attributes>Method
+--
++ start: int
++ end: int
++ methodName: String
++ parameters: String[]
++ calls: String[]
++ sources: Source[]
++ sanitizers: Sanitizer[]
++ sinks: Sink[]
++ taints: Taint[]
++ variables: String[]
++ paths: int[][]
++ complexity: int
+--
++ Method(start: int, end: int, methodName: String, paramaters: String[])
++ addSources(sources: Source[])
++ addSanitizers(sanitizers: Sanitizer[])
++ addSinks(sinks: Sink[])
++ addTaints(taints: String[])
++ addVariables(variables: String[])
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>511</x>
+      <y>7</y>
+      <w>140</w>
+      <h>49</h>
+    </coordinates>
+    <panel_attributes>Sink
+--
++ objectName: String
++ methods: Method[]</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>462</x>
+      <y>21</y>
+      <w>63</w>
+      <h>21</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>70.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>728</x>
+      <y>315</y>
+      <w>63</w>
+      <h>21</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>70.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+</diagram>

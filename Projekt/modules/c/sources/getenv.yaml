@@ -1,0 +1,6 @@
+---
+null:
+    Methods:
+    - Methodname: getenv
+      Parameters: [null]
+      Comment: Reads environment variables

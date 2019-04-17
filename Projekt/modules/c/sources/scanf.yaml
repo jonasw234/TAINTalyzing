@@ -1,0 +1,6 @@
+---
+null:
+    Methods:
+    - Methodname: scanf
+      Parameters: [null, $TAINT]
+      Comment: Reads formatted input from stdin

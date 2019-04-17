@@ -1,0 +1,305 @@
+TAINTalyzing report created on Su Mar 31 15:00:00 2019
+Start of analysis for testfiles\cfiles\cf.c:
+The filetype was detected as c.
+Analysis results for method "init" (lines 134 to 171).
+
+The following taints were detected:
+In line 155 a call with potentially user controlled input is made to sprintf.
+The following comment is linked to this sink: No check for destination buffer size, use snprintf instead.
+No sanitizer detected.
+Severity level: 100%.
+In line 157 a call with potentially user controlled input is made to sprintf.
+The following comment is linked to this sink: No check for destination buffer size, use snprintf instead.
+No sanitizer detected.
+Severity level: 100%.
+In line 159 a call with potentially user controlled input is made to sprintf.
+The following comment is linked to this sink: No check for destination buffer size, use snprintf instead.
+No sanitizer detected.
+Severity level: 100%.
+In line 161 a call with potentially user controlled input is made to sprintf.
+The following comment is linked to this sink: No check for destination buffer size, use snprintf instead.
+No sanitizer detected.
+Severity level: 100%.
+In line 145 a call with potentially user controlled input is made to sprintf.
+The following comment is linked to this sink: No check for destination buffer size, use snprintf instead.
+No sanitizer detected.
+Severity level: 100%.
+
+
+The following sinks were detected:
+
+In line 149 a call without any detected user controlled input is made to sprintf.
+The following comment is linked to this sink: No check for destination buffer size, use snprintf instead.
+Severity level: 50%.
+
+In line 163 a call without any detected user controlled input is made to sprintf.
+The following comment is linked to this sink: No check for destination buffer size, use snprintf instead.
+Severity level: 50%.
+
+Analysis results for method "openBookmarkDir" (lines 270 to 288).
+
+The following taints were detected:
+In line 281 a call with potentially user controlled input is made to strcpy.
+The following comment is linked to this sink: No check for destination buffer size, use strncpy instead.
+No sanitizer detected.
+Severity level: 100%.
+
+Analysis results for method "create_newwin" (lines 329 to 376).
+
+The following sinks were detected:
+
+In line 367 a call without any detected user controlled input is made to sprintf.
+The following comment is linked to this sink: No check for destination buffer size, use snprintf instead.
+Severity level: 50%.
+
+In line 375 a call without any detected user controlled input is made to strcpy.
+The following comment is linked to this sink: No check for destination buffer size, use strncpy instead.
+Severity level: 50%.
+
+Analysis results for method "openFile" (lines 382 to 400).
+
+The following sinks were detected:
+
+In line 391 a call without any detected user controlled input is made to system.
+The following comment is linked to this sink: Executes arbitrary system commands.
+Severity level: 50%.
+
+Analysis results for method "checkClipboard" (lines 407 to 426).
+
+The following taints were detected:
+In line 412 a call with potentially user controlled input is made to sprintf.
+The following comment is linked to this sink: No check for destination buffer size, use snprintf instead.
+No sanitizer detected.
+Severity level: 100%.
+
+Analysis results for method "removeClipboard" (lines 449 to 455).
+
+The following sinks were detected:
+
+In line 454 a call without any detected user controlled input is made to system.
+The following comment is linked to this sink: Executes arbitrary system commands.
+Severity level: 50%.
+
+Analysis results for method "getImgPreview" (lines 473 to 521).
+
+The following taints were detected:
+In line 491 a call with potentially user controlled input is made to sprintf.
+The following comment is linked to this sink: No check for destination buffer size, use snprintf instead.
+No sanitizer detected.
+Severity level: 100%.
+
+
+The following sinks were detected:
+
+In line 519 a call without any detected user controlled input is made to system.
+The following comment is linked to this sink: Executes arbitrary system commands.
+Severity level: 50%.
+
+Analysis results for method "getVidPreview" (lines 555 to 565).
+
+The following taints were detected:
+In line 558 a call with potentially user controlled input is made to sprintf.
+The following comment is linked to this sink: No check for destination buffer size, use snprintf instead.
+No sanitizer detected.
+Severity level: 100%.
+In line 561 a call with potentially user controlled input is made to sprintf.
+The following comment is linked to this sink: No check for destination buffer size, use snprintf instead.
+No sanitizer detected.
+Severity level: 100%.
+In line 562 a call with potentially user controlled input is made to sprintf.
+The following comment is linked to this sink: No check for destination buffer size, use snprintf instead.
+No sanitizer detected.
+Severity level: 100%.
+In line 560 a call with potentially user controlled input is made to system.
+The following comment is linked to this sink: Executes arbitrary system commands.
+No sanitizer detected.
+Severity level: 100%.
+
+
+The following sinks were detected:
+
+In line 563 a call without any detected user controlled input is made to system.
+The following comment is linked to this sink: Executes arbitrary system commands.
+Severity level: 50%.
+
+Analysis results for method "getArchivePreview" (lines 571 to 578).
+
+The following taints were detected:
+In line 574 a call with potentially user controlled input is made to sprintf.
+The following comment is linked to this sink: No check for destination buffer size, use snprintf instead.
+No sanitizer detected.
+Severity level: 100%.
+In line 576 a call with potentially user controlled input is made to sprintf.
+The following comment is linked to this sink: No check for destination buffer size, use snprintf instead.
+No sanitizer detected.
+Severity level: 100%.
+In line 575 a call with potentially user controlled input is made to system.
+The following comment is linked to this sink: Executes arbitrary system commands.
+No sanitizer detected.
+Severity level: 100%.
+
+Analysis results for method "getFileType" (lines 595 to 599).
+
+The following taints were detected:
+In line 597 a call with potentially user controlled input is made to strcpy.
+The following comment is linked to this sink: No check for destination buffer size, use strncpy instead.
+No sanitizer detected.
+Severity level: 100%.
+
+Analysis results for method "getPreview" (lines 605 to 619).
+
+The following taints were detected:
+In line 616 a call with potentially user controlled input is made to getArchivePreview.
+The following comment is linked to this sink: Calls sprintf from None.
+No sanitizer detected.
+Severity level: 100%.
+
+Analysis results for method "copyFiles" (lines 701 to 720).
+
+The following taints were detected:
+In line 716 a call with potentially user controlled input is made to system.
+The following comment is linked to this sink: Executes arbitrary system commands.
+No sanitizer detected.
+Severity level: 100%.
+
+Analysis results for method "removeFiles" (lines 725 to 743).
+
+The following taints were detected:
+In line 738 a call with potentially user controlled input is made to system.
+The following comment is linked to this sink: Executes arbitrary system commands.
+No sanitizer detected.
+Severity level: 100%.
+
+
+The following sinks were detected:
+
+In line 737 a call without any detected user controlled input is made to sprintf.
+The following comment is linked to this sink: No check for destination buffer size, use snprintf instead.
+Severity level: 50%.
+
+Analysis results for method "renameFiles" (lines 749 to 801).
+
+The following sinks were detected:
+
+In line 768 a call without any detected user controlled input is made to system.
+The following comment is linked to this sink: Executes arbitrary system commands.
+Severity level: 50%.
+
+In line 772 a call without any detected user controlled input is made to system.
+The following comment is linked to this sink: Executes arbitrary system commands.
+Severity level: 50%.
+
+In line 789 a call without any detected user controlled input is made to system.
+The following comment is linked to this sink: Executes arbitrary system commands.
+Severity level: 50%.
+
+In line 798 a call without any detected user controlled input is made to system.
+The following comment is linked to this sink: Executes arbitrary system commands.
+Severity level: 50%.
+
+Analysis results for method "moveFiles" (lines 807 to 826).
+
+The following taints were detected:
+In line 821 a call with potentially user controlled input is made to system.
+The following comment is linked to this sink: Executes arbitrary system commands.
+No sanitizer detected.
+Severity level: 100%.
+
+Analysis results for method "main" (lines 942 to 1445).
+Method has a cyclomatic complexity of 92.
+
+The following taints were detected:
+In line 1360 a call with potentially user controlled input is made to system.
+The following comment is linked to this sink: Executes arbitrary system commands.
+No sanitizer detected.
+Severity level: 100%.
+In line 1232 a call with potentially user controlled input is made to system.
+The following comment is linked to this sink: Executes arbitrary system commands.
+No sanitizer detected.
+Severity level: 100%.
+In line 1344 a call with potentially user controlled input is made to system.
+The following comment is linked to this sink: Executes arbitrary system commands.
+No sanitizer detected.
+Severity level: 100%.
+In line 1342 a call with potentially user controlled input is made to sprintf.
+The following comment is linked to this sink: No check for destination buffer size, use snprintf instead.
+No sanitizer detected.
+Severity level: 100%.
+
+
+The following sinks were detected:
+
+In line 1137 a call without any detected user controlled input is made to strcpy.
+The following comment is linked to this sink: No check for destination buffer size, use strncpy instead.
+Severity level: 50%.
+
+In line 1195 a call without any detected user controlled input is made to strcpy.
+The following comment is linked to this sink: No check for destination buffer size, use strncpy instead.
+Severity level: 50%.
+
+In line 1218 a call without any detected user controlled input is made to strcpy.
+The following comment is linked to this sink: No check for destination buffer size, use strncpy instead.
+Severity level: 50%.
+
+In line 962 a call without any detected user controlled input is made to strcpy.
+The following comment is linked to this sink: No check for destination buffer size, use strncpy instead.
+Severity level: 50%.
+
+In line 1033 a call without any detected user controlled input is made to strcpy.
+The following comment is linked to this sink: No check for destination buffer size, use strncpy instead.
+Severity level: 50%.
+
+In line 1198 a call without any detected user controlled input is made to strcpy.
+The following comment is linked to this sink: No check for destination buffer size, use strncpy instead.
+Severity level: 50%.
+
+In line 1221 a call without any detected user controlled input is made to strcpy.
+The following comment is linked to this sink: No check for destination buffer size, use strncpy instead.
+Severity level: 50%.
+
+In line 1122 a call without any detected user controlled input is made to strcpy.
+The following comment is linked to this sink: No check for destination buffer size, use strncpy instead.
+Severity level: 50%.
+
+In line 1138 a call without any detected user controlled input is made to strcpy.
+The following comment is linked to this sink: No check for destination buffer size, use strncpy instead.
+Severity level: 50%.
+
+In line 1184 a call without any detected user controlled input is made to sprintf.
+The following comment is linked to this sink: No check for destination buffer size, use snprintf instead.
+Severity level: 50%.
+
+In line 1230 a call without any detected user controlled input is made to sprintf.
+The following comment is linked to this sink: No check for destination buffer size, use snprintf instead.
+Severity level: 50%.
+
+In line 1208 a call without any detected user controlled input is made to sprintf.
+The following comment is linked to this sink: No check for destination buffer size, use snprintf instead.
+Severity level: 50%.
+
+In line 1210 a call without any detected user controlled input is made to sprintf.
+The following comment is linked to this sink: No check for destination buffer size, use snprintf instead.
+Severity level: 50%.
+
+In line 1021 a call without any detected user controlled input is made to sprintf.
+The following comment is linked to this sink: No check for destination buffer size, use snprintf instead.
+Severity level: 50%.
+
+In line 1061 a call without any detected user controlled input is made to getPreview.
+The following comment is linked to this sink: Calls getArchivePreview from None.
+Severity level: 50%.
+
+In line 1414 a call without any detected user controlled input is made to system.
+The following comment is linked to this sink: Executes arbitrary system commands.
+Severity level: 50%.
+
+In line 1284 a call without any detected user controlled input is made to moveFiles.
+The following comment is linked to this sink: Calls system from None.
+Severity level: 50%.
+
+In line 1372 a call without any detected user controlled input is made to getVidPreview.
+The following comment is linked to this sink: Calls sprintf from None.
+Severity level: 50%.
+
+
+Don't forget that these results are not necessarily complete and could be missing vulnerabilities.  Additional security checks are highly recommended!

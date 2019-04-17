@@ -1,0 +1,2225 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>test module &#8212; TAINTalyzing 2019-04-08 documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="module-test">
+<span id="test-module"></span><h1>test module<a class="headerlink" href="#module-test" title="Permalink to this headline">¶</a></h1>
+<p>This module provides unit tests for the TAINTalyzing framework.</p>
+<dl class="class">
+<dt id="test.TestAnalysis">
+<em class="property">class </em><code class="descclassname">test.</code><code class="descname">TestAnalysis</code><span class="sig-paren">(</span><em>methodName='runTest'</em><span class="sig-paren">)</span><a class="headerlink" href="#test.TestAnalysis" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">unittest.case.TestCase</span></code></p>
+<p>Test cases for analyses.</p>
+<p class="rubric">Methods</p>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">__call__</span></code>(*args,&nbsp;**kwds)</td>
+<td>Call self as a function.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">addCleanup</span></code>(function,&nbsp;*args,&nbsp;**kwargs)</td>
+<td>Add a function, with arguments, to be called when the test is completed.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">addTypeEqualityFunc</span></code>(typeobj,&nbsp;function)</td>
+<td>Add a type specific assertEqual style function to compare a type.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">assertAlmostEqual</span></code>(first,&nbsp;second[,&nbsp;places,&nbsp;…])</td>
+<td>Fail if the two objects are unequal as determined by their difference rounded to the given number of decimal places (default 7) and comparing to zero, or by comparing that the difference between the two objects is more than the given delta.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">assertCountEqual</span></code>(first,&nbsp;second[,&nbsp;msg])</td>
+<td>An unordered sequence comparison asserting that the same elements, regardless of order.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">assertDictContainsSubset</span></code>(subset,&nbsp;dictionary)</td>
+<td>Checks whether dictionary is a superset of subset.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">assertEqual</span></code>(first,&nbsp;second[,&nbsp;msg])</td>
+<td>Fail if the two objects are unequal as determined by the ‘==’ operator.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">assertFalse</span></code>(expr[,&nbsp;msg])</td>
+<td>Check that the expression is false.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">assertGreater</span></code>(a,&nbsp;b[,&nbsp;msg])</td>
+<td>Just like self.assertTrue(a &gt; b), but with a nicer default message.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">assertGreaterEqual</span></code>(a,&nbsp;b[,&nbsp;msg])</td>
+<td>Just like self.assertTrue(a &gt;= b), but with a nicer default message.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">assertIn</span></code>(member,&nbsp;container[,&nbsp;msg])</td>
+<td>Just like self.assertTrue(a in b), but with a nicer default message.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">assertIs</span></code>(expr1,&nbsp;expr2[,&nbsp;msg])</td>
+<td>Just like self.assertTrue(a is b), but with a nicer default message.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">assertIsInstance</span></code>(obj,&nbsp;cls[,&nbsp;msg])</td>
+<td>Same as self.assertTrue(isinstance(obj, cls)), with a nicer default message.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">assertIsNone</span></code>(obj[,&nbsp;msg])</td>
+<td>Same as self.assertTrue(obj is None), with a nicer default message.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">assertIsNot</span></code>(expr1,&nbsp;expr2[,&nbsp;msg])</td>
+<td>Just like self.assertTrue(a is not b), but with a nicer default message.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">assertIsNotNone</span></code>(obj[,&nbsp;msg])</td>
+<td>Included for symmetry with assertIsNone.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">assertLess</span></code>(a,&nbsp;b[,&nbsp;msg])</td>
+<td>Just like self.assertTrue(a &lt; b), but with a nicer default message.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">assertLessEqual</span></code>(a,&nbsp;b[,&nbsp;msg])</td>
+<td>Just like self.assertTrue(a &lt;= b), but with a nicer default message.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">assertListEqual</span></code>(list1,&nbsp;list2[,&nbsp;msg])</td>
+<td>A list-specific equality assertion.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">assertLogs</span></code>([logger,&nbsp;level])</td>
+<td>Fail unless a log message of level <em>level</em> or higher is emitted on <em>logger_name</em> or its children.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">assertMultiLineEqual</span></code>(first,&nbsp;second[,&nbsp;msg])</td>
+<td>Assert that two multi-line strings are equal.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">assertNotAlmostEqual</span></code>(first,&nbsp;second[,&nbsp;…])</td>
+<td>Fail if the two objects are equal as determined by their difference rounded to the given number of decimal places (default 7) and comparing to zero, or by comparing that the difference between the two objects is less than the given delta.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">assertNotEqual</span></code>(first,&nbsp;second[,&nbsp;msg])</td>
+<td>Fail if the two objects are equal as determined by the ‘!=’ operator.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">assertNotIn</span></code>(member,&nbsp;container[,&nbsp;msg])</td>
+<td>Just like self.assertTrue(a not in b), but with a nicer default message.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">assertNotIsInstance</span></code>(obj,&nbsp;cls[,&nbsp;msg])</td>
+<td>Included for symmetry with assertIsInstance.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">assertNotRegex</span></code>(text,&nbsp;unexpected_regex[,&nbsp;msg])</td>
+<td>Fail the test if the text matches the regular expression.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">assertRaises</span></code>(expected_exception,&nbsp;*args,&nbsp;**kwargs)</td>
+<td>Fail unless an exception of class expected_exception is raised by the callable when invoked with specified positional and keyword arguments.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">assertRaisesRegex</span></code>(expected_exception,&nbsp;…)</td>
+<td>Asserts that the message in a raised exception matches a regex.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">assertRegex</span></code>(text,&nbsp;expected_regex[,&nbsp;msg])</td>
+<td>Fail the test unless the text matches the regular expression.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">assertSequenceEqual</span></code>(seq1,&nbsp;seq2[,&nbsp;msg,&nbsp;seq_type])</td>
+<td>An equality assertion for ordered sequences (like lists and tuples).</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">assertSetEqual</span></code>(set1,&nbsp;set2[,&nbsp;msg])</td>
+<td>A set-specific equality assertion.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">assertTrue</span></code>(expr[,&nbsp;msg])</td>
+<td>Check that the expression is true.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">assertTupleEqual</span></code>(tuple1,&nbsp;tuple2[,&nbsp;msg])</td>
+<td>A tuple-specific equality assertion.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">assertWarns</span></code>(expected_warning,&nbsp;*args,&nbsp;**kwargs)</td>
+<td>Fail unless a warning of class warnClass is triggered by the callable when invoked with specified positional and keyword arguments.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">assertWarnsRegex</span></code>(expected_warning,&nbsp;…)</td>
+<td>Asserts that the message in a triggered warning matches a regexp.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">debug</span></code>()</td>
+<td>Run the test without collecting errors in a TestResult</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">doCleanups</span></code>()</td>
+<td>Execute all cleanup functions.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">fail</span></code>([msg])</td>
+<td>Fail immediately, with the given message.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">failureException</span></code></td>
+<td>alias of <code class="xref py py-class docutils literal notranslate"><span class="pre">builtins.AssertionError</span></code></td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">setUp</span></code>()</td>
+<td>Hook method for setting up the test fixture before exercising it.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">setUpClass</span></code>()</td>
+<td>Hook method for setting up class fixture before running tests in the class.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">shortDescription</span></code>()</td>
+<td>Returns a one-line description of the test, or None if no description has been provided.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">skipTest</span></code>(reason)</td>
+<td>Skip this test.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">subTest</span></code>([msg])</td>
+<td>Return a context manager that will return the enclosed block of code in a subtest identified by the optional message and keyword parameters.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">tearDown</span></code>()</td>
+<td>Hook method for deconstructing the test fixture after testing it.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">tearDownClass</span></code>()</td>
+<td>Hook method for deconstructing the class fixture after running all tests in the class.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#test.TestAnalysis.test_calculate_complexity" title="test.TestAnalysis.test_calculate_complexity"><code class="xref py py-obj docutils literal notranslate"><span class="pre">test_calculate_complexity</span></code></a>()</td>
+<td>Make sure that cyclomatic complexity is calculated correctly.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#test.TestAnalysis.test_complex_php" title="test.TestAnalysis.test_complex_php"><code class="xref py py-obj docutils literal notranslate"><span class="pre">test_complex_php</span></code></a>()</td>
+<td>Make sure that complex PHP files are analyzed correctly.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#test.TestAnalysis.test_exclusive_path" title="test.TestAnalysis.test_exclusive_path"><code class="xref py py-obj docutils literal notranslate"><span class="pre">test_exclusive_path</span></code></a>()</td>
+<td>Make sure a single exclusive path is recognized.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#test.TestAnalysis.test_exclusive_paths" title="test.TestAnalysis.test_exclusive_paths"><code class="xref py py-obj docutils literal notranslate"><span class="pre">test_exclusive_paths</span></code></a>()</td>
+<td>Make sure exclusive paths are recognized.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#test.TestAnalysis.test_find_methods" title="test.TestAnalysis.test_find_methods"><code class="xref py py-obj docutils literal notranslate"><span class="pre">test_find_methods</span></code></a>()</td>
+<td>Make sure all methods are recognized correctly.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#test.TestAnalysis.test_find_sanitized_simple_taints" title="test.TestAnalysis.test_find_sanitized_simple_taints"><code class="xref py py-obj docutils literal notranslate"><span class="pre">test_find_sanitized_simple_taints</span></code></a>()</td>
+<td>Make sure that sanitized sinks are also identified as taints with a reference to the sanitizer.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#test.TestAnalysis.test_find_sanitizers" title="test.TestAnalysis.test_find_sanitizers"><code class="xref py py-obj docutils literal notranslate"><span class="pre">test_find_sanitizers</span></code></a>()</td>
+<td>Make sure that sanitizers are identified correctly.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#test.TestAnalysis.test_find_simple_taints" title="test.TestAnalysis.test_find_simple_taints"><code class="xref py py-obj docutils literal notranslate"><span class="pre">test_find_simple_taints</span></code></a>()</td>
+<td>Make sure taints are identified correctly.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#test.TestAnalysis.test_find_sinks" title="test.TestAnalysis.test_find_sinks"><code class="xref py py-obj docutils literal notranslate"><span class="pre">test_find_sinks</span></code></a>()</td>
+<td>Make sure that sinks are identified correctly.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#test.TestAnalysis.test_find_sources" title="test.TestAnalysis.test_find_sources"><code class="xref py py-obj docutils literal notranslate"><span class="pre">test_find_sources</span></code></a>()</td>
+<td>Make sure that sources are identified correctly.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#test.TestAnalysis.test_find_variable_simple" title="test.TestAnalysis.test_find_variable_simple"><code class="xref py py-obj docutils literal notranslate"><span class="pre">test_find_variable_simple</span></code></a>()</td>
+<td>Make sure that simple variable sources are identified correctly.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#test.TestAnalysis.test_find_variable_source" title="test.TestAnalysis.test_find_variable_source"><code class="xref py py-obj docutils literal notranslate"><span class="pre">test_find_variable_source</span></code></a>()</td>
+<td>Make sure that variable sources over multiple functions are identified correctly.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#test.TestAnalysis.test_follow_sanitizers" title="test.TestAnalysis.test_follow_sanitizers"><code class="xref py py-obj docutils literal notranslate"><span class="pre">test_follow_sanitizers</span></code></a>()</td>
+<td>Make sure that sanitizers are followed across method calls.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#test.TestAnalysis.test_follow_sources_direct_returns" title="test.TestAnalysis.test_follow_sources_direct_returns"><code class="xref py py-obj docutils literal notranslate"><span class="pre">test_follow_sources_direct_returns</span></code></a>()</td>
+<td>Make sure that methods which have returns based on sources are added as sources themselves.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#test.TestAnalysis.test_follow_sources_parameters" title="test.TestAnalysis.test_follow_sources_parameters"><code class="xref py py-obj docutils literal notranslate"><span class="pre">test_follow_sources_parameters</span></code></a>()</td>
+<td>Make sure that methods which have parameters that are used as arguments to sources are added as sources themselves.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#test.TestAnalysis.test_follow_sources_returns" title="test.TestAnalysis.test_follow_sources_returns"><code class="xref py py-obj docutils literal notranslate"><span class="pre">test_follow_sources_returns</span></code></a>()</td>
+<td>Make sure that methods which have returns based on sources are added as sources themselves.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#test.TestAnalysis.test_follow_taints" title="test.TestAnalysis.test_follow_taints"><code class="xref py py-obj docutils literal notranslate"><span class="pre">test_follow_taints</span></code></a>()</td>
+<td>Make sure that taints are followed across method calls.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#test.TestAnalysis.test_follow_taints_classes" title="test.TestAnalysis.test_follow_taints_classes"><code class="xref py py-obj docutils literal notranslate"><span class="pre">test_follow_taints_classes</span></code></a>()</td>
+<td>Make sure that taints are followed across classes.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#test.TestAnalysis.test_getenv_sprintf" title="test.TestAnalysis.test_getenv_sprintf"><code class="xref py py-obj docutils literal notranslate"><span class="pre">test_getenv_sprintf</span></code></a>()</td>
+<td>Make sure that the combination of a returned source and a sink with the third parameter vulnerable on only one path is detected correctly.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#test.TestAnalysis.test_global_taint" title="test.TestAnalysis.test_global_taint"><code class="xref py py-obj docutils literal notranslate"><span class="pre">test_global_taint</span></code></a>()</td>
+<td>Make sure globals are recognized correctly.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#test.TestAnalysis.test_mutually_exclusive_taint" title="test.TestAnalysis.test_mutually_exclusive_taint"><code class="xref py py-obj docutils literal notranslate"><span class="pre">test_mutually_exclusive_taint</span></code></a>()</td>
+<td>Make sure that mutually exclusive blocks are recognized during taint analysis.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#test.TestAnalysis.test_subcall" title="test.TestAnalysis.test_subcall"><code class="xref py py-obj docutils literal notranslate"><span class="pre">test_subcall</span></code></a>()</td>
+<td>Make sure that calls inside expressions are identified correctly.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#test.TestAnalysis.test_subsubcall" title="test.TestAnalysis.test_subsubcall"><code class="xref py py-obj docutils literal notranslate"><span class="pre">test_subsubcall</span></code></a>()</td>
+<td>Make sure that subcalls inside expressions are identified correctly.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#test.TestAnalysis.test_subsubcall_harmless" title="test.TestAnalysis.test_subsubcall_harmless"><code class="xref py py-obj docutils literal notranslate"><span class="pre">test_subsubcall_harmless</span></code></a>()</td>
+<td>Make sure that harmless subcalls inside expressions are not identified as taints.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#test.TestAnalysis.test_subsubcall_two_parameters" title="test.TestAnalysis.test_subsubcall_two_parameters"><code class="xref py py-obj docutils literal notranslate"><span class="pre">test_subsubcall_two_parameters</span></code></a>()</td>
+<td>Make sure that subcalls inside expressions at different positions are identified correctly.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#test.TestAnalysis.test_two_sinks" title="test.TestAnalysis.test_two_sinks"><code class="xref py py-obj docutils literal notranslate"><span class="pre">test_two_sinks</span></code></a>()</td>
+<td>Make sure two sinks of the same type are identified correctly.</td>
+</tr>
+</tbody>
+</table>
+<table border="1" class="docutils">
+<colgroup>
+<col width="72%" />
+<col width="28%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>assertAlmostEquals</strong></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><strong>assertDictEqual</strong></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><strong>assertEquals</strong></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><strong>assertNotAlmostEquals</strong></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><strong>assertNotEquals</strong></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><strong>assertNotRegexpMatches</strong></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><strong>assertRaisesRegexp</strong></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><strong>assertRegexpMatches</strong></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><strong>assert_</strong></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><strong>countTestCases</strong></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><strong>defaultTestResult</strong></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><strong>failIf</strong></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><strong>failIfAlmostEqual</strong></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><strong>failIfEqual</strong></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><strong>failUnless</strong></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><strong>failUnlessAlmostEqual</strong></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><strong>failUnlessEqual</strong></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><strong>failUnlessRaises</strong></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><strong>id</strong></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><strong>run</strong></td>
+<td>&#160;</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="test.TestAnalysis.test_calculate_complexity">
+<code class="descname">test_calculate_complexity</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#test.TestAnalysis.test_calculate_complexity" title="Permalink to this definition">¶</a></dt>
+<dd><p>Make sure that cyclomatic complexity is calculated correctly.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="test.TestAnalysis.test_complex_php">
+<code class="descname">test_complex_php</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#test.TestAnalysis.test_complex_php" title="Permalink to this definition">¶</a></dt>
+<dd><p>Make sure that complex PHP files are analyzed correctly.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="test.TestAnalysis.test_exclusive_path">
+<code class="descname">test_exclusive_path</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#test.TestAnalysis.test_exclusive_path" title="Permalink to this definition">¶</a></dt>
+<dd><p>Make sure a single exclusive path is recognized.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="test.TestAnalysis.test_exclusive_paths">
+<code class="descname">test_exclusive_paths</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#test.TestAnalysis.test_exclusive_paths" title="Permalink to this definition">¶</a></dt>
+<dd><p>Make sure exclusive paths are recognized.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="test.TestAnalysis.test_find_methods">
+<code class="descname">test_find_methods</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#test.TestAnalysis.test_find_methods" title="Permalink to this definition">¶</a></dt>
+<dd><p>Make sure all methods are recognized correctly.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="test.TestAnalysis.test_find_sanitized_simple_taints">
+<code class="descname">test_find_sanitized_simple_taints</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#test.TestAnalysis.test_find_sanitized_simple_taints" title="Permalink to this definition">¶</a></dt>
+<dd><p>Make sure that sanitized sinks are also identified as taints with a reference to the
+sanitizer.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="test.TestAnalysis.test_find_sanitizers">
+<code class="descname">test_find_sanitizers</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#test.TestAnalysis.test_find_sanitizers" title="Permalink to this definition">¶</a></dt>
+<dd><p>Make sure that sanitizers are identified correctly.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="test.TestAnalysis.test_find_simple_taints">
+<code class="descname">test_find_simple_taints</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#test.TestAnalysis.test_find_simple_taints" title="Permalink to this definition">¶</a></dt>
+<dd><p>Make sure taints are identified correctly.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="test.TestAnalysis.test_find_sinks">
+<code class="descname">test_find_sinks</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#test.TestAnalysis.test_find_sinks" title="Permalink to this definition">¶</a></dt>
+<dd><p>Make sure that sinks are identified correctly.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="test.TestAnalysis.test_find_sources">
+<code class="descname">test_find_sources</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#test.TestAnalysis.test_find_sources" title="Permalink to this definition">¶</a></dt>
+<dd><p>Make sure that sources are identified correctly.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="test.TestAnalysis.test_find_variable_simple">
+<code class="descname">test_find_variable_simple</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#test.TestAnalysis.test_find_variable_simple" title="Permalink to this definition">¶</a></dt>
+<dd><p>Make sure that simple variable sources are identified correctly.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="test.TestAnalysis.test_find_variable_source">
+<code class="descname">test_find_variable_source</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#test.TestAnalysis.test_find_variable_source" title="Permalink to this definition">¶</a></dt>
+<dd><p>Make sure that variable sources over multiple functions are identified correctly.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="test.TestAnalysis.test_follow_sanitizers">
+<code class="descname">test_follow_sanitizers</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#test.TestAnalysis.test_follow_sanitizers" title="Permalink to this definition">¶</a></dt>
+<dd><p>Make sure that sanitizers are followed across method calls.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="test.TestAnalysis.test_follow_sources_direct_returns">
+<code class="descname">test_follow_sources_direct_returns</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#test.TestAnalysis.test_follow_sources_direct_returns" title="Permalink to this definition">¶</a></dt>
+<dd><p>Make sure that methods which have returns based on sources are added as sources
+themselves.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="test.TestAnalysis.test_follow_sources_parameters">
+<code class="descname">test_follow_sources_parameters</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#test.TestAnalysis.test_follow_sources_parameters" title="Permalink to this definition">¶</a></dt>
+<dd><p>Make sure that methods which have parameters that are used as arguments to sources are
+added as sources themselves.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="test.TestAnalysis.test_follow_sources_returns">
+<code class="descname">test_follow_sources_returns</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#test.TestAnalysis.test_follow_sources_returns" title="Permalink to this definition">¶</a></dt>
+<dd><p>Make sure that methods which have returns based on sources are added as sources
+themselves.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="test.TestAnalysis.test_follow_taints">
+<code class="descname">test_follow_taints</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#test.TestAnalysis.test_follow_taints" title="Permalink to this definition">¶</a></dt>
+<dd><p>Make sure that taints are followed across method calls.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="test.TestAnalysis.test_follow_taints_classes">
+<code class="descname">test_follow_taints_classes</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#test.TestAnalysis.test_follow_taints_classes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Make sure that taints are followed across classes.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="test.TestAnalysis.test_getenv_sprintf">
+<code class="descname">test_getenv_sprintf</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#test.TestAnalysis.test_getenv_sprintf" title="Permalink to this definition">¶</a></dt>
+<dd><p>Make sure that the combination of a returned source and a sink with the third parameter
+vulnerable on only one path is detected correctly.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="test.TestAnalysis.test_global_taint">
+<code class="descname">test_global_taint</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#test.TestAnalysis.test_global_taint" title="Permalink to this definition">¶</a></dt>
+<dd><p>Make sure globals are recognized correctly.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="test.TestAnalysis.test_mutually_exclusive_taint">
+<code class="descname">test_mutually_exclusive_taint</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#test.TestAnalysis.test_mutually_exclusive_taint" title="Permalink to this definition">¶</a></dt>
+<dd><p>Make sure that mutually exclusive blocks are recognized during taint analysis.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="test.TestAnalysis.test_subcall">
+<code class="descname">test_subcall</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#test.TestAnalysis.test_subcall" title="Permalink to this definition">¶</a></dt>
+<dd><p>Make sure that calls inside expressions are identified correctly.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="test.TestAnalysis.test_subsubcall">
+<code class="descname">test_subsubcall</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#test.TestAnalysis.test_subsubcall" title="Permalink to this definition">¶</a></dt>
+<dd><p>Make sure that subcalls inside expressions are identified correctly.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="test.TestAnalysis.test_subsubcall_harmless">
+<code class="descname">test_subsubcall_harmless</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#test.TestAnalysis.test_subsubcall_harmless" title="Permalink to this definition">¶</a></dt>
+<dd><p>Make sure that harmless subcalls inside expressions are not identified as taints.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="test.TestAnalysis.test_subsubcall_two_parameters">
+<code class="descname">test_subsubcall_two_parameters</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#test.TestAnalysis.test_subsubcall_two_parameters" title="Permalink to this definition">¶</a></dt>
+<dd><p>Make sure that subcalls inside expressions at different positions are identified
+correctly.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="test.TestAnalysis.test_two_sinks">
+<code class="descname">test_two_sinks</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#test.TestAnalysis.test_two_sinks" title="Permalink to this definition">¶</a></dt>
+<dd><p>Make sure two sinks of the same type are identified correctly.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="test.TestCGrammar">
+<em class="property">class </em><code class="descclassname">test.</code><code class="descname">TestCGrammar</code><span class="sig-paren">(</span><em>methodName='runTest'</em><span class="sig-paren">)</span><a class="headerlink" href="#test.TestCGrammar" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">unittest.case.TestCase</span></code></p>
+<p>Test cases for C grammar file for parsing C files.</p>
+<p class="rubric">Methods</p>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">__call__</span></code>(*args,&nbsp;**kwds)</td>
+<td>Call self as a function.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">addCleanup</span></code>(function,&nbsp;*args,&nbsp;**kwargs)</td>
+<td>Add a function, with arguments, to be called when the test is completed.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">addTypeEqualityFunc</span></code>(typeobj,&nbsp;function)</td>
+<td>Add a type specific assertEqual style function to compare a type.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">assertAlmostEqual</span></code>(first,&nbsp;second[,&nbsp;places,&nbsp;…])</td>
+<td>Fail if the two objects are unequal as determined by their difference rounded to the given number of decimal places (default 7) and comparing to zero, or by comparing that the difference between the two objects is more than the given delta.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">assertCountEqual</span></code>(first,&nbsp;second[,&nbsp;msg])</td>
+<td>An unordered sequence comparison asserting that the same elements, regardless of order.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">assertDictContainsSubset</span></code>(subset,&nbsp;dictionary)</td>
+<td>Checks whether dictionary is a superset of subset.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">assertEqual</span></code>(first,&nbsp;second[,&nbsp;msg])</td>
+<td>Fail if the two objects are unequal as determined by the ‘==’ operator.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">assertFalse</span></code>(expr[,&nbsp;msg])</td>
+<td>Check that the expression is false.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">assertGreater</span></code>(a,&nbsp;b[,&nbsp;msg])</td>
+<td>Just like self.assertTrue(a &gt; b), but with a nicer default message.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">assertGreaterEqual</span></code>(a,&nbsp;b[,&nbsp;msg])</td>
+<td>Just like self.assertTrue(a &gt;= b), but with a nicer default message.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">assertIn</span></code>(member,&nbsp;container[,&nbsp;msg])</td>
+<td>Just like self.assertTrue(a in b), but with a nicer default message.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">assertIs</span></code>(expr1,&nbsp;expr2[,&nbsp;msg])</td>
+<td>Just like self.assertTrue(a is b), but with a nicer default message.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">assertIsInstance</span></code>(obj,&nbsp;cls[,&nbsp;msg])</td>
+<td>Same as self.assertTrue(isinstance(obj, cls)), with a nicer default message.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">assertIsNone</span></code>(obj[,&nbsp;msg])</td>
+<td>Same as self.assertTrue(obj is None), with a nicer default message.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">assertIsNot</span></code>(expr1,&nbsp;expr2[,&nbsp;msg])</td>
+<td>Just like self.assertTrue(a is not b), but with a nicer default message.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">assertIsNotNone</span></code>(obj[,&nbsp;msg])</td>
+<td>Included for symmetry with assertIsNone.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">assertLess</span></code>(a,&nbsp;b[,&nbsp;msg])</td>
+<td>Just like self.assertTrue(a &lt; b), but with a nicer default message.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">assertLessEqual</span></code>(a,&nbsp;b[,&nbsp;msg])</td>
+<td>Just like self.assertTrue(a &lt;= b), but with a nicer default message.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">assertListEqual</span></code>(list1,&nbsp;list2[,&nbsp;msg])</td>
+<td>A list-specific equality assertion.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">assertLogs</span></code>([logger,&nbsp;level])</td>
+<td>Fail unless a log message of level <em>level</em> or higher is emitted on <em>logger_name</em> or its children.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">assertMultiLineEqual</span></code>(first,&nbsp;second[,&nbsp;msg])</td>
+<td>Assert that two multi-line strings are equal.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">assertNotAlmostEqual</span></code>(first,&nbsp;second[,&nbsp;…])</td>
+<td>Fail if the two objects are equal as determined by their difference rounded to the given number of decimal places (default 7) and comparing to zero, or by comparing that the difference between the two objects is less than the given delta.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">assertNotEqual</span></code>(first,&nbsp;second[,&nbsp;msg])</td>
+<td>Fail if the two objects are equal as determined by the ‘!=’ operator.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">assertNotIn</span></code>(member,&nbsp;container[,&nbsp;msg])</td>
+<td>Just like self.assertTrue(a not in b), but with a nicer default message.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">assertNotIsInstance</span></code>(obj,&nbsp;cls[,&nbsp;msg])</td>
+<td>Included for symmetry with assertIsInstance.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">assertNotRegex</span></code>(text,&nbsp;unexpected_regex[,&nbsp;msg])</td>
+<td>Fail the test if the text matches the regular expression.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">assertRaises</span></code>(expected_exception,&nbsp;*args,&nbsp;**kwargs)</td>
+<td>Fail unless an exception of class expected_exception is raised by the callable when invoked with specified positional and keyword arguments.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">assertRaisesRegex</span></code>(expected_exception,&nbsp;…)</td>
+<td>Asserts that the message in a raised exception matches a regex.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">assertRegex</span></code>(text,&nbsp;expected_regex[,&nbsp;msg])</td>
+<td>Fail the test unless the text matches the regular expression.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">assertSequenceEqual</span></code>(seq1,&nbsp;seq2[,&nbsp;msg,&nbsp;seq_type])</td>
+<td>An equality assertion for ordered sequences (like lists and tuples).</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">assertSetEqual</span></code>(set1,&nbsp;set2[,&nbsp;msg])</td>
+<td>A set-specific equality assertion.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">assertTrue</span></code>(expr[,&nbsp;msg])</td>
+<td>Check that the expression is true.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">assertTupleEqual</span></code>(tuple1,&nbsp;tuple2[,&nbsp;msg])</td>
+<td>A tuple-specific equality assertion.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">assertWarns</span></code>(expected_warning,&nbsp;*args,&nbsp;**kwargs)</td>
+<td>Fail unless a warning of class warnClass is triggered by the callable when invoked with specified positional and keyword arguments.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">assertWarnsRegex</span></code>(expected_warning,&nbsp;…)</td>
+<td>Asserts that the message in a triggered warning matches a regexp.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">debug</span></code>()</td>
+<td>Run the test without collecting errors in a TestResult</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">doCleanups</span></code>()</td>
+<td>Execute all cleanup functions.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">fail</span></code>([msg])</td>
+<td>Fail immediately, with the given message.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">failureException</span></code></td>
+<td>alias of <code class="xref py py-class docutils literal notranslate"><span class="pre">builtins.AssertionError</span></code></td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">setUp</span></code>()</td>
+<td>Hook method for setting up the test fixture before exercising it.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">setUpClass</span></code>()</td>
+<td>Hook method for setting up class fixture before running tests in the class.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">shortDescription</span></code>()</td>
+<td>Returns a one-line description of the test, or None if no description has been provided.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">skipTest</span></code>(reason)</td>
+<td>Skip this test.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">subTest</span></code>([msg])</td>
+<td>Return a context manager that will return the enclosed block of code in a subtest identified by the optional message and keyword parameters.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">tearDown</span></code>()</td>
+<td>Hook method for deconstructing the test fixture after testing it.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">tearDownClass</span></code>()</td>
+<td>Hook method for deconstructing the class fixture after running all tests in the class.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#test.TestCGrammar.test_assignments" title="test.TestCGrammar.test_assignments"><code class="xref py py-obj docutils literal notranslate"><span class="pre">test_assignments</span></code></a>()</td>
+<td>Make sure assignments are identified correctly.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#test.TestCGrammar.test_detect_parameters" title="test.TestCGrammar.test_detect_parameters"><code class="xref py py-obj docutils literal notranslate"><span class="pre">test_detect_parameters</span></code></a>()</td>
+<td>Make sure parameters and default values are detected correctly.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#test.TestCGrammar.test_follow_variables" title="test.TestCGrammar.test_follow_variables"><code class="xref py py-obj docutils literal notranslate"><span class="pre">test_follow_variables</span></code></a>()</td>
+<td>Make sure that variables are followed correctly.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#test.TestCGrammar.test_identify_returns" title="test.TestCGrammar.test_identify_returns"><code class="xref py py-obj docutils literal notranslate"><span class="pre">test_identify_returns</span></code></a>()</td>
+<td>Make sure multiple returns are detected correctly.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#test.TestCGrammar.test_multiple_functions" title="test.TestCGrammar.test_multiple_functions"><code class="xref py py-obj docutils literal notranslate"><span class="pre">test_multiple_functions</span></code></a>()</td>
+<td>Make sure multiple functions are detected correctly.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#test.TestCGrammar.test_multiple_instructions" title="test.TestCGrammar.test_multiple_instructions"><code class="xref py py-obj docutils literal notranslate"><span class="pre">test_multiple_instructions</span></code></a>()</td>
+<td>Make sure multiple instructions in the method body are parsed correctly.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#test.TestCGrammar.test_single_instruction" title="test.TestCGrammar.test_single_instruction"><code class="xref py py-obj docutils literal notranslate"><span class="pre">test_single_instruction</span></code></a>()</td>
+<td>Make sure files with a single instruction in the method body are parsed correctly.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#test.TestCGrammar.test_unknown_tokens" title="test.TestCGrammar.test_unknown_tokens"><code class="xref py py-obj docutils literal notranslate"><span class="pre">test_unknown_tokens</span></code></a>()</td>
+<td>Make sure unknown tokens don’t confuse the parser.</td>
+</tr>
+</tbody>
+</table>
+<table border="1" class="docutils">
+<colgroup>
+<col width="72%" />
+<col width="28%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>assertAlmostEquals</strong></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><strong>assertDictEqual</strong></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><strong>assertEquals</strong></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><strong>assertNotAlmostEquals</strong></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><strong>assertNotEquals</strong></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><strong>assertNotRegexpMatches</strong></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><strong>assertRaisesRegexp</strong></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><strong>assertRegexpMatches</strong></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><strong>assert_</strong></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><strong>countTestCases</strong></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><strong>defaultTestResult</strong></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><strong>failIf</strong></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><strong>failIfAlmostEqual</strong></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><strong>failIfEqual</strong></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><strong>failUnless</strong></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><strong>failUnlessAlmostEqual</strong></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><strong>failUnlessEqual</strong></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><strong>failUnlessRaises</strong></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><strong>id</strong></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><strong>run</strong></td>
+<td>&#160;</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="test.TestCGrammar.test_assignments">
+<code class="descname">test_assignments</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#test.TestCGrammar.test_assignments" title="Permalink to this definition">¶</a></dt>
+<dd><p>Make sure assignments are identified correctly.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="test.TestCGrammar.test_detect_parameters">
+<code class="descname">test_detect_parameters</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#test.TestCGrammar.test_detect_parameters" title="Permalink to this definition">¶</a></dt>
+<dd><p>Make sure parameters and default values are detected correctly.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="test.TestCGrammar.test_follow_variables">
+<code class="descname">test_follow_variables</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#test.TestCGrammar.test_follow_variables" title="Permalink to this definition">¶</a></dt>
+<dd><p>Make sure that variables are followed correctly.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="test.TestCGrammar.test_identify_returns">
+<code class="descname">test_identify_returns</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#test.TestCGrammar.test_identify_returns" title="Permalink to this definition">¶</a></dt>
+<dd><p>Make sure multiple returns are detected correctly.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="test.TestCGrammar.test_multiple_functions">
+<code class="descname">test_multiple_functions</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#test.TestCGrammar.test_multiple_functions" title="Permalink to this definition">¶</a></dt>
+<dd><p>Make sure multiple functions are detected correctly.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="test.TestCGrammar.test_multiple_instructions">
+<code class="descname">test_multiple_instructions</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#test.TestCGrammar.test_multiple_instructions" title="Permalink to this definition">¶</a></dt>
+<dd><p>Make sure multiple instructions in the method body are parsed correctly.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="test.TestCGrammar.test_single_instruction">
+<code class="descname">test_single_instruction</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#test.TestCGrammar.test_single_instruction" title="Permalink to this definition">¶</a></dt>
+<dd><p>Make sure files with a single instruction in the method body are parsed correctly.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="test.TestCGrammar.test_unknown_tokens">
+<code class="descname">test_unknown_tokens</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#test.TestCGrammar.test_unknown_tokens" title="Permalink to this definition">¶</a></dt>
+<dd><p>Make sure unknown tokens don’t confuse the parser.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="test.TestInputFile">
+<em class="property">class </em><code class="descclassname">test.</code><code class="descname">TestInputFile</code><span class="sig-paren">(</span><em>methodName='runTest'</em><span class="sig-paren">)</span><a class="headerlink" href="#test.TestInputFile" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">unittest.case.TestCase</span></code></p>
+<p>Test cases for InputFile module.</p>
+<p class="rubric">Methods</p>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">__call__</span></code>(*args,&nbsp;**kwds)</td>
+<td>Call self as a function.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">addCleanup</span></code>(function,&nbsp;*args,&nbsp;**kwargs)</td>
+<td>Add a function, with arguments, to be called when the test is completed.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">addTypeEqualityFunc</span></code>(typeobj,&nbsp;function)</td>
+<td>Add a type specific assertEqual style function to compare a type.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">assertAlmostEqual</span></code>(first,&nbsp;second[,&nbsp;places,&nbsp;…])</td>
+<td>Fail if the two objects are unequal as determined by their difference rounded to the given number of decimal places (default 7) and comparing to zero, or by comparing that the difference between the two objects is more than the given delta.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">assertCountEqual</span></code>(first,&nbsp;second[,&nbsp;msg])</td>
+<td>An unordered sequence comparison asserting that the same elements, regardless of order.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">assertDictContainsSubset</span></code>(subset,&nbsp;dictionary)</td>
+<td>Checks whether dictionary is a superset of subset.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">assertEqual</span></code>(first,&nbsp;second[,&nbsp;msg])</td>
+<td>Fail if the two objects are unequal as determined by the ‘==’ operator.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">assertFalse</span></code>(expr[,&nbsp;msg])</td>
+<td>Check that the expression is false.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">assertGreater</span></code>(a,&nbsp;b[,&nbsp;msg])</td>
+<td>Just like self.assertTrue(a &gt; b), but with a nicer default message.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">assertGreaterEqual</span></code>(a,&nbsp;b[,&nbsp;msg])</td>
+<td>Just like self.assertTrue(a &gt;= b), but with a nicer default message.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">assertIn</span></code>(member,&nbsp;container[,&nbsp;msg])</td>
+<td>Just like self.assertTrue(a in b), but with a nicer default message.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">assertIs</span></code>(expr1,&nbsp;expr2[,&nbsp;msg])</td>
+<td>Just like self.assertTrue(a is b), but with a nicer default message.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">assertIsInstance</span></code>(obj,&nbsp;cls[,&nbsp;msg])</td>
+<td>Same as self.assertTrue(isinstance(obj, cls)), with a nicer default message.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">assertIsNone</span></code>(obj[,&nbsp;msg])</td>
+<td>Same as self.assertTrue(obj is None), with a nicer default message.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">assertIsNot</span></code>(expr1,&nbsp;expr2[,&nbsp;msg])</td>
+<td>Just like self.assertTrue(a is not b), but with a nicer default message.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">assertIsNotNone</span></code>(obj[,&nbsp;msg])</td>
+<td>Included for symmetry with assertIsNone.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">assertLess</span></code>(a,&nbsp;b[,&nbsp;msg])</td>
+<td>Just like self.assertTrue(a &lt; b), but with a nicer default message.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">assertLessEqual</span></code>(a,&nbsp;b[,&nbsp;msg])</td>
+<td>Just like self.assertTrue(a &lt;= b), but with a nicer default message.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">assertListEqual</span></code>(list1,&nbsp;list2[,&nbsp;msg])</td>
+<td>A list-specific equality assertion.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">assertLogs</span></code>([logger,&nbsp;level])</td>
+<td>Fail unless a log message of level <em>level</em> or higher is emitted on <em>logger_name</em> or its children.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">assertMultiLineEqual</span></code>(first,&nbsp;second[,&nbsp;msg])</td>
+<td>Assert that two multi-line strings are equal.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">assertNotAlmostEqual</span></code>(first,&nbsp;second[,&nbsp;…])</td>
+<td>Fail if the two objects are equal as determined by their difference rounded to the given number of decimal places (default 7) and comparing to zero, or by comparing that the difference between the two objects is less than the given delta.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">assertNotEqual</span></code>(first,&nbsp;second[,&nbsp;msg])</td>
+<td>Fail if the two objects are equal as determined by the ‘!=’ operator.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">assertNotIn</span></code>(member,&nbsp;container[,&nbsp;msg])</td>
+<td>Just like self.assertTrue(a not in b), but with a nicer default message.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">assertNotIsInstance</span></code>(obj,&nbsp;cls[,&nbsp;msg])</td>
+<td>Included for symmetry with assertIsInstance.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">assertNotRegex</span></code>(text,&nbsp;unexpected_regex[,&nbsp;msg])</td>
+<td>Fail the test if the text matches the regular expression.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">assertRaises</span></code>(expected_exception,&nbsp;*args,&nbsp;**kwargs)</td>
+<td>Fail unless an exception of class expected_exception is raised by the callable when invoked with specified positional and keyword arguments.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">assertRaisesRegex</span></code>(expected_exception,&nbsp;…)</td>
+<td>Asserts that the message in a raised exception matches a regex.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">assertRegex</span></code>(text,&nbsp;expected_regex[,&nbsp;msg])</td>
+<td>Fail the test unless the text matches the regular expression.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">assertSequenceEqual</span></code>(seq1,&nbsp;seq2[,&nbsp;msg,&nbsp;seq_type])</td>
+<td>An equality assertion for ordered sequences (like lists and tuples).</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">assertSetEqual</span></code>(set1,&nbsp;set2[,&nbsp;msg])</td>
+<td>A set-specific equality assertion.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">assertTrue</span></code>(expr[,&nbsp;msg])</td>
+<td>Check that the expression is true.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">assertTupleEqual</span></code>(tuple1,&nbsp;tuple2[,&nbsp;msg])</td>
+<td>A tuple-specific equality assertion.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">assertWarns</span></code>(expected_warning,&nbsp;*args,&nbsp;**kwargs)</td>
+<td>Fail unless a warning of class warnClass is triggered by the callable when invoked with specified positional and keyword arguments.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">assertWarnsRegex</span></code>(expected_warning,&nbsp;…)</td>
+<td>Asserts that the message in a triggered warning matches a regexp.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">debug</span></code>()</td>
+<td>Run the test without collecting errors in a TestResult</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">doCleanups</span></code>()</td>
+<td>Execute all cleanup functions.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">fail</span></code>([msg])</td>
+<td>Fail immediately, with the given message.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">failureException</span></code></td>
+<td>alias of <code class="xref py py-class docutils literal notranslate"><span class="pre">builtins.AssertionError</span></code></td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">setUp</span></code>()</td>
+<td>Hook method for setting up the test fixture before exercising it.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">setUpClass</span></code>()</td>
+<td>Hook method for setting up class fixture before running tests in the class.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">shortDescription</span></code>()</td>
+<td>Returns a one-line description of the test, or None if no description has been provided.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">skipTest</span></code>(reason)</td>
+<td>Skip this test.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">subTest</span></code>([msg])</td>
+<td>Return a context manager that will return the enclosed block of code in a subtest identified by the optional message and keyword parameters.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">tearDown</span></code>()</td>
+<td>Hook method for deconstructing the test fixture after testing it.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">tearDownClass</span></code>()</td>
+<td>Hook method for deconstructing the class fixture after running all tests in the class.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#test.TestInputFile.test_extension_detection" title="test.TestInputFile.test_extension_detection"><code class="xref py py-obj docutils literal notranslate"><span class="pre">test_extension_detection</span></code></a>()</td>
+<td>Make sure files can be detected based on extension alone.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#test.TestInputFile.test_fallback_detection" title="test.TestInputFile.test_fallback_detection"><code class="xref py py-obj docutils literal notranslate"><span class="pre">test_fallback_detection</span></code></a>()</td>
+<td>Make sure fallback detection works if nothing else matches.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#test.TestInputFile.test_heuristic_detection" title="test.TestInputFile.test_heuristic_detection"><code class="xref py py-obj docutils literal notranslate"><span class="pre">test_heuristic_detection</span></code></a>()</td>
+<td>Make sure heuristic correctly identifies files based on majority of recognized filetypes in the same directory.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#test.TestInputFile.test_heuristic_detection_empty" title="test.TestInputFile.test_heuristic_detection_empty"><code class="xref py py-obj docutils literal notranslate"><span class="pre">test_heuristic_detection_empty</span></code></a>()</td>
+<td>Make sure heuristic detection just returns an empty string when no modules can be identified for any of the files in the same directory.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#test.TestInputFile.test_heuristic_detection_respect_possibilities" title="test.TestInputFile.test_heuristic_detection_respect_possibilities"><code class="xref py py-obj docutils literal notranslate"><span class="pre">test_heuristic_detection_respect_possibilities</span></code></a>()</td>
+<td>Make sure that the heuristic detection respect the list of possible detections from other detection methods.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#test.TestInputFile.test_magic_detection" title="test.TestInputFile.test_magic_detection"><code class="xref py py-obj docutils literal notranslate"><span class="pre">test_magic_detection</span></code></a>()</td>
+<td>Make sure files can be detected based on the magic number.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#test.TestInputFile.test_multiple_magic_detection" title="test.TestInputFile.test_multiple_magic_detection"><code class="xref py py-obj docutils literal notranslate"><span class="pre">test_multiple_magic_detection</span></code></a>()</td>
+<td>Make sure files can be correctly detected even if multiple magic numbers match.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#test.TestInputFile.test_read_binary_file" title="test.TestInputFile.test_read_binary_file"><code class="xref py py-obj docutils literal notranslate"><span class="pre">test_read_binary_file</span></code></a>()</td>
+<td>Make sure binary files are handled gracefully.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#test.TestInputFile.test_read_file_ascii_dos" title="test.TestInputFile.test_read_file_ascii_dos"><code class="xref py py-obj docutils literal notranslate"><span class="pre">test_read_file_ascii_dos</span></code></a>()</td>
+<td>Check if an ASCII file with DOS line endings can be read.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#test.TestInputFile.test_read_file_ascii_utf8_unix" title="test.TestInputFile.test_read_file_ascii_utf8_unix"><code class="xref py py-obj docutils literal notranslate"><span class="pre">test_read_file_ascii_utf8_unix</span></code></a>()</td>
+<td>Check if an ASCII, utf8 encoded file with Unix line endings can be read.</td>
+</tr>
+</tbody>
+</table>
+<table border="1" class="docutils">
+<colgroup>
+<col width="72%" />
+<col width="28%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>assertAlmostEquals</strong></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><strong>assertDictEqual</strong></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><strong>assertEquals</strong></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><strong>assertNotAlmostEquals</strong></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><strong>assertNotEquals</strong></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><strong>assertNotRegexpMatches</strong></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><strong>assertRaisesRegexp</strong></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><strong>assertRegexpMatches</strong></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><strong>assert_</strong></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><strong>countTestCases</strong></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><strong>defaultTestResult</strong></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><strong>failIf</strong></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><strong>failIfAlmostEqual</strong></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><strong>failIfEqual</strong></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><strong>failUnless</strong></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><strong>failUnlessAlmostEqual</strong></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><strong>failUnlessEqual</strong></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><strong>failUnlessRaises</strong></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><strong>id</strong></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><strong>run</strong></td>
+<td>&#160;</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="test.TestInputFile.test_extension_detection">
+<code class="descname">test_extension_detection</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#test.TestInputFile.test_extension_detection" title="Permalink to this definition">¶</a></dt>
+<dd><p>Make sure files can be detected based on extension alone.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="test.TestInputFile.test_fallback_detection">
+<code class="descname">test_fallback_detection</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#test.TestInputFile.test_fallback_detection" title="Permalink to this definition">¶</a></dt>
+<dd><p>Make sure fallback detection works if nothing else matches.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="test.TestInputFile.test_heuristic_detection">
+<code class="descname">test_heuristic_detection</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#test.TestInputFile.test_heuristic_detection" title="Permalink to this definition">¶</a></dt>
+<dd><p>Make sure heuristic correctly identifies files based on majority of recognized filetypes
+in the same directory.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="test.TestInputFile.test_heuristic_detection_empty">
+<code class="descname">test_heuristic_detection_empty</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#test.TestInputFile.test_heuristic_detection_empty" title="Permalink to this definition">¶</a></dt>
+<dd><p>Make sure heuristic detection just returns an empty string when no modules can be
+identified for any of the files in the same directory.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="test.TestInputFile.test_heuristic_detection_respect_possibilities">
+<code class="descname">test_heuristic_detection_respect_possibilities</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#test.TestInputFile.test_heuristic_detection_respect_possibilities" title="Permalink to this definition">¶</a></dt>
+<dd><p>Make sure that the heuristic detection respect the list of possible detections from other
+detection methods.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="test.TestInputFile.test_magic_detection">
+<code class="descname">test_magic_detection</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#test.TestInputFile.test_magic_detection" title="Permalink to this definition">¶</a></dt>
+<dd><p>Make sure files can be detected based on the magic number.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="test.TestInputFile.test_multiple_magic_detection">
+<code class="descname">test_multiple_magic_detection</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#test.TestInputFile.test_multiple_magic_detection" title="Permalink to this definition">¶</a></dt>
+<dd><p>Make sure files can be correctly detected even if multiple magic numbers match.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="test.TestInputFile.test_read_binary_file">
+<code class="descname">test_read_binary_file</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#test.TestInputFile.test_read_binary_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>Make sure binary files are handled gracefully.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="test.TestInputFile.test_read_file_ascii_dos">
+<code class="descname">test_read_file_ascii_dos</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#test.TestInputFile.test_read_file_ascii_dos" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check if an ASCII file with DOS line endings can be read.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="test.TestInputFile.test_read_file_ascii_utf8_unix">
+<code class="descname">test_read_file_ascii_utf8_unix</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#test.TestInputFile.test_read_file_ascii_utf8_unix" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check if an ASCII, utf8 encoded file with Unix line endings can be read.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="test.TestMain">
+<em class="property">class </em><code class="descclassname">test.</code><code class="descname">TestMain</code><span class="sig-paren">(</span><em>methodName='runTest'</em><span class="sig-paren">)</span><a class="headerlink" href="#test.TestMain" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">unittest.case.TestCase</span></code></p>
+<p>Test cases for main module.</p>
+<p class="rubric">Methods</p>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">__call__</span></code>(*args,&nbsp;**kwds)</td>
+<td>Call self as a function.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">addCleanup</span></code>(function,&nbsp;*args,&nbsp;**kwargs)</td>
+<td>Add a function, with arguments, to be called when the test is completed.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">addTypeEqualityFunc</span></code>(typeobj,&nbsp;function)</td>
+<td>Add a type specific assertEqual style function to compare a type.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">assertAlmostEqual</span></code>(first,&nbsp;second[,&nbsp;places,&nbsp;…])</td>
+<td>Fail if the two objects are unequal as determined by their difference rounded to the given number of decimal places (default 7) and comparing to zero, or by comparing that the difference between the two objects is more than the given delta.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">assertCountEqual</span></code>(first,&nbsp;second[,&nbsp;msg])</td>
+<td>An unordered sequence comparison asserting that the same elements, regardless of order.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">assertDictContainsSubset</span></code>(subset,&nbsp;dictionary)</td>
+<td>Checks whether dictionary is a superset of subset.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">assertEqual</span></code>(first,&nbsp;second[,&nbsp;msg])</td>
+<td>Fail if the two objects are unequal as determined by the ‘==’ operator.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">assertFalse</span></code>(expr[,&nbsp;msg])</td>
+<td>Check that the expression is false.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">assertGreater</span></code>(a,&nbsp;b[,&nbsp;msg])</td>
+<td>Just like self.assertTrue(a &gt; b), but with a nicer default message.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">assertGreaterEqual</span></code>(a,&nbsp;b[,&nbsp;msg])</td>
+<td>Just like self.assertTrue(a &gt;= b), but with a nicer default message.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">assertIn</span></code>(member,&nbsp;container[,&nbsp;msg])</td>
+<td>Just like self.assertTrue(a in b), but with a nicer default message.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">assertIs</span></code>(expr1,&nbsp;expr2[,&nbsp;msg])</td>
+<td>Just like self.assertTrue(a is b), but with a nicer default message.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">assertIsInstance</span></code>(obj,&nbsp;cls[,&nbsp;msg])</td>
+<td>Same as self.assertTrue(isinstance(obj, cls)), with a nicer default message.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">assertIsNone</span></code>(obj[,&nbsp;msg])</td>
+<td>Same as self.assertTrue(obj is None), with a nicer default message.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">assertIsNot</span></code>(expr1,&nbsp;expr2[,&nbsp;msg])</td>
+<td>Just like self.assertTrue(a is not b), but with a nicer default message.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">assertIsNotNone</span></code>(obj[,&nbsp;msg])</td>
+<td>Included for symmetry with assertIsNone.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">assertLess</span></code>(a,&nbsp;b[,&nbsp;msg])</td>
+<td>Just like self.assertTrue(a &lt; b), but with a nicer default message.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">assertLessEqual</span></code>(a,&nbsp;b[,&nbsp;msg])</td>
+<td>Just like self.assertTrue(a &lt;= b), but with a nicer default message.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">assertListEqual</span></code>(list1,&nbsp;list2[,&nbsp;msg])</td>
+<td>A list-specific equality assertion.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">assertLogs</span></code>([logger,&nbsp;level])</td>
+<td>Fail unless a log message of level <em>level</em> or higher is emitted on <em>logger_name</em> or its children.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">assertMultiLineEqual</span></code>(first,&nbsp;second[,&nbsp;msg])</td>
+<td>Assert that two multi-line strings are equal.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">assertNotAlmostEqual</span></code>(first,&nbsp;second[,&nbsp;…])</td>
+<td>Fail if the two objects are equal as determined by their difference rounded to the given number of decimal places (default 7) and comparing to zero, or by comparing that the difference between the two objects is less than the given delta.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">assertNotEqual</span></code>(first,&nbsp;second[,&nbsp;msg])</td>
+<td>Fail if the two objects are equal as determined by the ‘!=’ operator.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">assertNotIn</span></code>(member,&nbsp;container[,&nbsp;msg])</td>
+<td>Just like self.assertTrue(a not in b), but with a nicer default message.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">assertNotIsInstance</span></code>(obj,&nbsp;cls[,&nbsp;msg])</td>
+<td>Included for symmetry with assertIsInstance.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">assertNotRegex</span></code>(text,&nbsp;unexpected_regex[,&nbsp;msg])</td>
+<td>Fail the test if the text matches the regular expression.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">assertRaises</span></code>(expected_exception,&nbsp;*args,&nbsp;**kwargs)</td>
+<td>Fail unless an exception of class expected_exception is raised by the callable when invoked with specified positional and keyword arguments.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">assertRaisesRegex</span></code>(expected_exception,&nbsp;…)</td>
+<td>Asserts that the message in a raised exception matches a regex.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">assertRegex</span></code>(text,&nbsp;expected_regex[,&nbsp;msg])</td>
+<td>Fail the test unless the text matches the regular expression.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">assertSequenceEqual</span></code>(seq1,&nbsp;seq2[,&nbsp;msg,&nbsp;seq_type])</td>
+<td>An equality assertion for ordered sequences (like lists and tuples).</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">assertSetEqual</span></code>(set1,&nbsp;set2[,&nbsp;msg])</td>
+<td>A set-specific equality assertion.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">assertTrue</span></code>(expr[,&nbsp;msg])</td>
+<td>Check that the expression is true.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">assertTupleEqual</span></code>(tuple1,&nbsp;tuple2[,&nbsp;msg])</td>
+<td>A tuple-specific equality assertion.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">assertWarns</span></code>(expected_warning,&nbsp;*args,&nbsp;**kwargs)</td>
+<td>Fail unless a warning of class warnClass is triggered by the callable when invoked with specified positional and keyword arguments.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">assertWarnsRegex</span></code>(expected_warning,&nbsp;…)</td>
+<td>Asserts that the message in a triggered warning matches a regexp.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">debug</span></code>()</td>
+<td>Run the test without collecting errors in a TestResult</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">doCleanups</span></code>()</td>
+<td>Execute all cleanup functions.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">fail</span></code>([msg])</td>
+<td>Fail immediately, with the given message.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">failureException</span></code></td>
+<td>alias of <code class="xref py py-class docutils literal notranslate"><span class="pre">builtins.AssertionError</span></code></td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">setUp</span></code>()</td>
+<td>Hook method for setting up the test fixture before exercising it.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">setUpClass</span></code>()</td>
+<td>Hook method for setting up class fixture before running tests in the class.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">shortDescription</span></code>()</td>
+<td>Returns a one-line description of the test, or None if no description has been provided.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">skipTest</span></code>(reason)</td>
+<td>Skip this test.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">subTest</span></code>([msg])</td>
+<td>Return a context manager that will return the enclosed block of code in a subtest identified by the optional message and keyword parameters.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">tearDown</span></code>()</td>
+<td>Hook method for deconstructing the test fixture after testing it.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">tearDownClass</span></code>()</td>
+<td>Hook method for deconstructing the class fixture after running all tests in the class.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#test.TestMain.test_find_files" title="test.TestMain.test_find_files"><code class="xref py py-obj docutils literal notranslate"><span class="pre">test_find_files</span></code></a>()</td>
+<td>Check if all files are found.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#test.TestMain.test_find_files_exclude" title="test.TestMain.test_find_files_exclude"><code class="xref py py-obj docutils literal notranslate"><span class="pre">test_find_files_exclude</span></code></a>()</td>
+<td>Test if single excludes work.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#test.TestMain.test_find_files_exclude_all" title="test.TestMain.test_find_files_exclude_all"><code class="xref py py-obj docutils literal notranslate"><span class="pre">test_find_files_exclude_all</span></code></a>()</td>
+<td>Test if no error is thrown if everything is excluded.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#test.TestMain.test_find_files_multiple_excludes" title="test.TestMain.test_find_files_multiple_excludes"><code class="xref py py-obj docutils literal notranslate"><span class="pre">test_find_files_multiple_excludes</span></code></a>()</td>
+<td>Test if multiple excludes work independently from each other.</td>
+</tr>
+</tbody>
+</table>
+<table border="1" class="docutils">
+<colgroup>
+<col width="72%" />
+<col width="28%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>assertAlmostEquals</strong></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><strong>assertDictEqual</strong></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><strong>assertEquals</strong></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><strong>assertNotAlmostEquals</strong></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><strong>assertNotEquals</strong></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><strong>assertNotRegexpMatches</strong></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><strong>assertRaisesRegexp</strong></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><strong>assertRegexpMatches</strong></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><strong>assert_</strong></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><strong>countTestCases</strong></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><strong>defaultTestResult</strong></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><strong>failIf</strong></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><strong>failIfAlmostEqual</strong></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><strong>failIfEqual</strong></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><strong>failUnless</strong></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><strong>failUnlessAlmostEqual</strong></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><strong>failUnlessEqual</strong></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><strong>failUnlessRaises</strong></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><strong>id</strong></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><strong>run</strong></td>
+<td>&#160;</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="test.TestMain.test_find_files">
+<code class="descname">test_find_files</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#test.TestMain.test_find_files" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check if all files are found.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="test.TestMain.test_find_files_exclude">
+<code class="descname">test_find_files_exclude</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#test.TestMain.test_find_files_exclude" title="Permalink to this definition">¶</a></dt>
+<dd><p>Test if single excludes work.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="test.TestMain.test_find_files_exclude_all">
+<code class="descname">test_find_files_exclude_all</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#test.TestMain.test_find_files_exclude_all" title="Permalink to this definition">¶</a></dt>
+<dd><p>Test if no error is thrown if everything is excluded.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="test.TestMain.test_find_files_multiple_excludes">
+<code class="descname">test_find_files_multiple_excludes</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#test.TestMain.test_find_files_multiple_excludes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Test if multiple excludes work independently from each other.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="test.TestPHPGrammar">
+<em class="property">class </em><code class="descclassname">test.</code><code class="descname">TestPHPGrammar</code><span class="sig-paren">(</span><em>methodName='runTest'</em><span class="sig-paren">)</span><a class="headerlink" href="#test.TestPHPGrammar" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">unittest.case.TestCase</span></code></p>
+<p>Test cases for PHP grammar file for parsing PHP files.</p>
+<p class="rubric">Methods</p>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">__call__</span></code>(*args,&nbsp;**kwds)</td>
+<td>Call self as a function.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">addCleanup</span></code>(function,&nbsp;*args,&nbsp;**kwargs)</td>
+<td>Add a function, with arguments, to be called when the test is completed.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">addTypeEqualityFunc</span></code>(typeobj,&nbsp;function)</td>
+<td>Add a type specific assertEqual style function to compare a type.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">assertAlmostEqual</span></code>(first,&nbsp;second[,&nbsp;places,&nbsp;…])</td>
+<td>Fail if the two objects are unequal as determined by their difference rounded to the given number of decimal places (default 7) and comparing to zero, or by comparing that the difference between the two objects is more than the given delta.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">assertCountEqual</span></code>(first,&nbsp;second[,&nbsp;msg])</td>
+<td>An unordered sequence comparison asserting that the same elements, regardless of order.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">assertDictContainsSubset</span></code>(subset,&nbsp;dictionary)</td>
+<td>Checks whether dictionary is a superset of subset.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">assertEqual</span></code>(first,&nbsp;second[,&nbsp;msg])</td>
+<td>Fail if the two objects are unequal as determined by the ‘==’ operator.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">assertFalse</span></code>(expr[,&nbsp;msg])</td>
+<td>Check that the expression is false.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">assertGreater</span></code>(a,&nbsp;b[,&nbsp;msg])</td>
+<td>Just like self.assertTrue(a &gt; b), but with a nicer default message.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">assertGreaterEqual</span></code>(a,&nbsp;b[,&nbsp;msg])</td>
+<td>Just like self.assertTrue(a &gt;= b), but with a nicer default message.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">assertIn</span></code>(member,&nbsp;container[,&nbsp;msg])</td>
+<td>Just like self.assertTrue(a in b), but with a nicer default message.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">assertIs</span></code>(expr1,&nbsp;expr2[,&nbsp;msg])</td>
+<td>Just like self.assertTrue(a is b), but with a nicer default message.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">assertIsInstance</span></code>(obj,&nbsp;cls[,&nbsp;msg])</td>
+<td>Same as self.assertTrue(isinstance(obj, cls)), with a nicer default message.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">assertIsNone</span></code>(obj[,&nbsp;msg])</td>
+<td>Same as self.assertTrue(obj is None), with a nicer default message.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">assertIsNot</span></code>(expr1,&nbsp;expr2[,&nbsp;msg])</td>
+<td>Just like self.assertTrue(a is not b), but with a nicer default message.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">assertIsNotNone</span></code>(obj[,&nbsp;msg])</td>
+<td>Included for symmetry with assertIsNone.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">assertLess</span></code>(a,&nbsp;b[,&nbsp;msg])</td>
+<td>Just like self.assertTrue(a &lt; b), but with a nicer default message.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">assertLessEqual</span></code>(a,&nbsp;b[,&nbsp;msg])</td>
+<td>Just like self.assertTrue(a &lt;= b), but with a nicer default message.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">assertListEqual</span></code>(list1,&nbsp;list2[,&nbsp;msg])</td>
+<td>A list-specific equality assertion.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">assertLogs</span></code>([logger,&nbsp;level])</td>
+<td>Fail unless a log message of level <em>level</em> or higher is emitted on <em>logger_name</em> or its children.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">assertMultiLineEqual</span></code>(first,&nbsp;second[,&nbsp;msg])</td>
+<td>Assert that two multi-line strings are equal.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">assertNotAlmostEqual</span></code>(first,&nbsp;second[,&nbsp;…])</td>
+<td>Fail if the two objects are equal as determined by their difference rounded to the given number of decimal places (default 7) and comparing to zero, or by comparing that the difference between the two objects is less than the given delta.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">assertNotEqual</span></code>(first,&nbsp;second[,&nbsp;msg])</td>
+<td>Fail if the two objects are equal as determined by the ‘!=’ operator.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">assertNotIn</span></code>(member,&nbsp;container[,&nbsp;msg])</td>
+<td>Just like self.assertTrue(a not in b), but with a nicer default message.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">assertNotIsInstance</span></code>(obj,&nbsp;cls[,&nbsp;msg])</td>
+<td>Included for symmetry with assertIsInstance.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">assertNotRegex</span></code>(text,&nbsp;unexpected_regex[,&nbsp;msg])</td>
+<td>Fail the test if the text matches the regular expression.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">assertRaises</span></code>(expected_exception,&nbsp;*args,&nbsp;**kwargs)</td>
+<td>Fail unless an exception of class expected_exception is raised by the callable when invoked with specified positional and keyword arguments.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">assertRaisesRegex</span></code>(expected_exception,&nbsp;…)</td>
+<td>Asserts that the message in a raised exception matches a regex.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">assertRegex</span></code>(text,&nbsp;expected_regex[,&nbsp;msg])</td>
+<td>Fail the test unless the text matches the regular expression.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">assertSequenceEqual</span></code>(seq1,&nbsp;seq2[,&nbsp;msg,&nbsp;seq_type])</td>
+<td>An equality assertion for ordered sequences (like lists and tuples).</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">assertSetEqual</span></code>(set1,&nbsp;set2[,&nbsp;msg])</td>
+<td>A set-specific equality assertion.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">assertTrue</span></code>(expr[,&nbsp;msg])</td>
+<td>Check that the expression is true.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">assertTupleEqual</span></code>(tuple1,&nbsp;tuple2[,&nbsp;msg])</td>
+<td>A tuple-specific equality assertion.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">assertWarns</span></code>(expected_warning,&nbsp;*args,&nbsp;**kwargs)</td>
+<td>Fail unless a warning of class warnClass is triggered by the callable when invoked with specified positional and keyword arguments.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">assertWarnsRegex</span></code>(expected_warning,&nbsp;…)</td>
+<td>Asserts that the message in a triggered warning matches a regexp.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">debug</span></code>()</td>
+<td>Run the test without collecting errors in a TestResult</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">doCleanups</span></code>()</td>
+<td>Execute all cleanup functions.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">fail</span></code>([msg])</td>
+<td>Fail immediately, with the given message.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">failureException</span></code></td>
+<td>alias of <code class="xref py py-class docutils literal notranslate"><span class="pre">builtins.AssertionError</span></code></td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">setUp</span></code>()</td>
+<td>Hook method for setting up the test fixture before exercising it.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">setUpClass</span></code>()</td>
+<td>Hook method for setting up class fixture before running tests in the class.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">shortDescription</span></code>()</td>
+<td>Returns a one-line description of the test, or None if no description has been provided.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">skipTest</span></code>(reason)</td>
+<td>Skip this test.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">subTest</span></code>([msg])</td>
+<td>Return a context manager that will return the enclosed block of code in a subtest identified by the optional message and keyword parameters.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">tearDown</span></code>()</td>
+<td>Hook method for deconstructing the test fixture after testing it.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">tearDownClass</span></code>()</td>
+<td>Hook method for deconstructing the class fixture after running all tests in the class.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#test.TestPHPGrammar.test_detect_parameters" title="test.TestPHPGrammar.test_detect_parameters"><code class="xref py py-obj docutils literal notranslate"><span class="pre">test_detect_parameters</span></code></a>()</td>
+<td>Make sure parameters and default values are detected correctly.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#test.TestPHPGrammar.test_find_classes" title="test.TestPHPGrammar.test_find_classes"><code class="xref py py-obj docutils literal notranslate"><span class="pre">test_find_classes</span></code></a>()</td>
+<td>Make sure classes are identified correctly.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#test.TestPHPGrammar.test_multiple_instructions" title="test.TestPHPGrammar.test_multiple_instructions"><code class="xref py py-obj docutils literal notranslate"><span class="pre">test_multiple_instructions</span></code></a>()</td>
+<td>Make sure multiple instructions in the method body are parsed correctly.</td>
+</tr>
+</tbody>
+</table>
+<table border="1" class="docutils">
+<colgroup>
+<col width="72%" />
+<col width="28%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>assertAlmostEquals</strong></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><strong>assertDictEqual</strong></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><strong>assertEquals</strong></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><strong>assertNotAlmostEquals</strong></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><strong>assertNotEquals</strong></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><strong>assertNotRegexpMatches</strong></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><strong>assertRaisesRegexp</strong></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><strong>assertRegexpMatches</strong></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><strong>assert_</strong></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><strong>countTestCases</strong></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><strong>defaultTestResult</strong></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><strong>failIf</strong></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><strong>failIfAlmostEqual</strong></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><strong>failIfEqual</strong></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><strong>failUnless</strong></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><strong>failUnlessAlmostEqual</strong></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><strong>failUnlessEqual</strong></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><strong>failUnlessRaises</strong></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><strong>id</strong></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><strong>run</strong></td>
+<td>&#160;</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="test.TestPHPGrammar.test_detect_parameters">
+<code class="descname">test_detect_parameters</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#test.TestPHPGrammar.test_detect_parameters" title="Permalink to this definition">¶</a></dt>
+<dd><p>Make sure parameters and default values are detected correctly.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="test.TestPHPGrammar.test_find_classes">
+<code class="descname">test_find_classes</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#test.TestPHPGrammar.test_find_classes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Make sure classes are identified correctly.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="test.TestPHPGrammar.test_multiple_instructions">
+<code class="descname">test_multiple_instructions</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#test.TestPHPGrammar.test_multiple_instructions" title="Permalink to this definition">¶</a></dt>
+<dd><p>Make sure multiple instructions in the method body are parsed correctly.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="test.TestPythonGrammar">
+<em class="property">class </em><code class="descclassname">test.</code><code class="descname">TestPythonGrammar</code><span class="sig-paren">(</span><em>methodName='runTest'</em><span class="sig-paren">)</span><a class="headerlink" href="#test.TestPythonGrammar" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">unittest.case.TestCase</span></code></p>
+<p>Test cases for Python grammar file for parsing Python files.</p>
+<p class="rubric">Methods</p>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">__call__</span></code>(*args,&nbsp;**kwds)</td>
+<td>Call self as a function.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">addCleanup</span></code>(function,&nbsp;*args,&nbsp;**kwargs)</td>
+<td>Add a function, with arguments, to be called when the test is completed.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">addTypeEqualityFunc</span></code>(typeobj,&nbsp;function)</td>
+<td>Add a type specific assertEqual style function to compare a type.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">assertAlmostEqual</span></code>(first,&nbsp;second[,&nbsp;places,&nbsp;…])</td>
+<td>Fail if the two objects are unequal as determined by their difference rounded to the given number of decimal places (default 7) and comparing to zero, or by comparing that the difference between the two objects is more than the given delta.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">assertCountEqual</span></code>(first,&nbsp;second[,&nbsp;msg])</td>
+<td>An unordered sequence comparison asserting that the same elements, regardless of order.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">assertDictContainsSubset</span></code>(subset,&nbsp;dictionary)</td>
+<td>Checks whether dictionary is a superset of subset.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">assertEqual</span></code>(first,&nbsp;second[,&nbsp;msg])</td>
+<td>Fail if the two objects are unequal as determined by the ‘==’ operator.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">assertFalse</span></code>(expr[,&nbsp;msg])</td>
+<td>Check that the expression is false.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">assertGreater</span></code>(a,&nbsp;b[,&nbsp;msg])</td>
+<td>Just like self.assertTrue(a &gt; b), but with a nicer default message.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">assertGreaterEqual</span></code>(a,&nbsp;b[,&nbsp;msg])</td>
+<td>Just like self.assertTrue(a &gt;= b), but with a nicer default message.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">assertIn</span></code>(member,&nbsp;container[,&nbsp;msg])</td>
+<td>Just like self.assertTrue(a in b), but with a nicer default message.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">assertIs</span></code>(expr1,&nbsp;expr2[,&nbsp;msg])</td>
+<td>Just like self.assertTrue(a is b), but with a nicer default message.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">assertIsInstance</span></code>(obj,&nbsp;cls[,&nbsp;msg])</td>
+<td>Same as self.assertTrue(isinstance(obj, cls)), with a nicer default message.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">assertIsNone</span></code>(obj[,&nbsp;msg])</td>
+<td>Same as self.assertTrue(obj is None), with a nicer default message.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">assertIsNot</span></code>(expr1,&nbsp;expr2[,&nbsp;msg])</td>
+<td>Just like self.assertTrue(a is not b), but with a nicer default message.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">assertIsNotNone</span></code>(obj[,&nbsp;msg])</td>
+<td>Included for symmetry with assertIsNone.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">assertLess</span></code>(a,&nbsp;b[,&nbsp;msg])</td>
+<td>Just like self.assertTrue(a &lt; b), but with a nicer default message.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">assertLessEqual</span></code>(a,&nbsp;b[,&nbsp;msg])</td>
+<td>Just like self.assertTrue(a &lt;= b), but with a nicer default message.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">assertListEqual</span></code>(list1,&nbsp;list2[,&nbsp;msg])</td>
+<td>A list-specific equality assertion.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">assertLogs</span></code>([logger,&nbsp;level])</td>
+<td>Fail unless a log message of level <em>level</em> or higher is emitted on <em>logger_name</em> or its children.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">assertMultiLineEqual</span></code>(first,&nbsp;second[,&nbsp;msg])</td>
+<td>Assert that two multi-line strings are equal.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">assertNotAlmostEqual</span></code>(first,&nbsp;second[,&nbsp;…])</td>
+<td>Fail if the two objects are equal as determined by their difference rounded to the given number of decimal places (default 7) and comparing to zero, or by comparing that the difference between the two objects is less than the given delta.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">assertNotEqual</span></code>(first,&nbsp;second[,&nbsp;msg])</td>
+<td>Fail if the two objects are equal as determined by the ‘!=’ operator.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">assertNotIn</span></code>(member,&nbsp;container[,&nbsp;msg])</td>
+<td>Just like self.assertTrue(a not in b), but with a nicer default message.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">assertNotIsInstance</span></code>(obj,&nbsp;cls[,&nbsp;msg])</td>
+<td>Included for symmetry with assertIsInstance.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">assertNotRegex</span></code>(text,&nbsp;unexpected_regex[,&nbsp;msg])</td>
+<td>Fail the test if the text matches the regular expression.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">assertRaises</span></code>(expected_exception,&nbsp;*args,&nbsp;**kwargs)</td>
+<td>Fail unless an exception of class expected_exception is raised by the callable when invoked with specified positional and keyword arguments.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">assertRaisesRegex</span></code>(expected_exception,&nbsp;…)</td>
+<td>Asserts that the message in a raised exception matches a regex.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">assertRegex</span></code>(text,&nbsp;expected_regex[,&nbsp;msg])</td>
+<td>Fail the test unless the text matches the regular expression.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">assertSequenceEqual</span></code>(seq1,&nbsp;seq2[,&nbsp;msg,&nbsp;seq_type])</td>
+<td>An equality assertion for ordered sequences (like lists and tuples).</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">assertSetEqual</span></code>(set1,&nbsp;set2[,&nbsp;msg])</td>
+<td>A set-specific equality assertion.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">assertTrue</span></code>(expr[,&nbsp;msg])</td>
+<td>Check that the expression is true.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">assertTupleEqual</span></code>(tuple1,&nbsp;tuple2[,&nbsp;msg])</td>
+<td>A tuple-specific equality assertion.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">assertWarns</span></code>(expected_warning,&nbsp;*args,&nbsp;**kwargs)</td>
+<td>Fail unless a warning of class warnClass is triggered by the callable when invoked with specified positional and keyword arguments.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">assertWarnsRegex</span></code>(expected_warning,&nbsp;…)</td>
+<td>Asserts that the message in a triggered warning matches a regexp.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">debug</span></code>()</td>
+<td>Run the test without collecting errors in a TestResult</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">doCleanups</span></code>()</td>
+<td>Execute all cleanup functions.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">fail</span></code>([msg])</td>
+<td>Fail immediately, with the given message.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">failureException</span></code></td>
+<td>alias of <code class="xref py py-class docutils literal notranslate"><span class="pre">builtins.AssertionError</span></code></td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">setUp</span></code>()</td>
+<td>Hook method for setting up the test fixture before exercising it.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">setUpClass</span></code>()</td>
+<td>Hook method for setting up class fixture before running tests in the class.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">shortDescription</span></code>()</td>
+<td>Returns a one-line description of the test, or None if no description has been provided.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">skipTest</span></code>(reason)</td>
+<td>Skip this test.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">subTest</span></code>([msg])</td>
+<td>Return a context manager that will return the enclosed block of code in a subtest identified by the optional message and keyword parameters.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">tearDown</span></code>()</td>
+<td>Hook method for deconstructing the test fixture after testing it.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">tearDownClass</span></code>()</td>
+<td>Hook method for deconstructing the class fixture after running all tests in the class.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#test.TestPythonGrammar.test_detect_parameters" title="test.TestPythonGrammar.test_detect_parameters"><code class="xref py py-obj docutils literal notranslate"><span class="pre">test_detect_parameters</span></code></a>()</td>
+<td>Make sure parameters and default values are detected correctly.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#test.TestPythonGrammar.test_find_classes" title="test.TestPythonGrammar.test_find_classes"><code class="xref py py-obj docutils literal notranslate"><span class="pre">test_find_classes</span></code></a>()</td>
+<td>Make sure classes are identified correctly.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#test.TestPythonGrammar.test_multiple_instructions" title="test.TestPythonGrammar.test_multiple_instructions"><code class="xref py py-obj docutils literal notranslate"><span class="pre">test_multiple_instructions</span></code></a>()</td>
+<td>Make sure multiple instructions in the method body are parsed correctly.</td>
+</tr>
+</tbody>
+</table>
+<table border="1" class="docutils">
+<colgroup>
+<col width="72%" />
+<col width="28%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>assertAlmostEquals</strong></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><strong>assertDictEqual</strong></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><strong>assertEquals</strong></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><strong>assertNotAlmostEquals</strong></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><strong>assertNotEquals</strong></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><strong>assertNotRegexpMatches</strong></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><strong>assertRaisesRegexp</strong></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><strong>assertRegexpMatches</strong></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><strong>assert_</strong></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><strong>countTestCases</strong></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><strong>defaultTestResult</strong></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><strong>failIf</strong></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><strong>failIfAlmostEqual</strong></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><strong>failIfEqual</strong></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><strong>failUnless</strong></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><strong>failUnlessAlmostEqual</strong></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><strong>failUnlessEqual</strong></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><strong>failUnlessRaises</strong></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><strong>id</strong></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><strong>run</strong></td>
+<td>&#160;</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="test.TestPythonGrammar.test_detect_parameters">
+<code class="descname">test_detect_parameters</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#test.TestPythonGrammar.test_detect_parameters" title="Permalink to this definition">¶</a></dt>
+<dd><p>Make sure parameters and default values are detected correctly.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="test.TestPythonGrammar.test_find_classes">
+<code class="descname">test_find_classes</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#test.TestPythonGrammar.test_find_classes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Make sure classes are identified correctly.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="test.TestPythonGrammar.test_multiple_instructions">
+<code class="descname">test_multiple_instructions</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#test.TestPythonGrammar.test_multiple_instructions" title="Permalink to this definition">¶</a></dt>
+<dd><p>Make sure multiple instructions in the method body are parsed correctly.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="test.TestRuleset">
+<em class="property">class </em><code class="descclassname">test.</code><code class="descname">TestRuleset</code><span class="sig-paren">(</span><em>methodName='runTest'</em><span class="sig-paren">)</span><a class="headerlink" href="#test.TestRuleset" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">unittest.case.TestCase</span></code></p>
+<p>Test cases for rulesets.</p>
+<p class="rubric">Methods</p>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">__call__</span></code>(*args,&nbsp;**kwds)</td>
+<td>Call self as a function.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">addCleanup</span></code>(function,&nbsp;*args,&nbsp;**kwargs)</td>
+<td>Add a function, with arguments, to be called when the test is completed.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">addTypeEqualityFunc</span></code>(typeobj,&nbsp;function)</td>
+<td>Add a type specific assertEqual style function to compare a type.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">assertAlmostEqual</span></code>(first,&nbsp;second[,&nbsp;places,&nbsp;…])</td>
+<td>Fail if the two objects are unequal as determined by their difference rounded to the given number of decimal places (default 7) and comparing to zero, or by comparing that the difference between the two objects is more than the given delta.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">assertCountEqual</span></code>(first,&nbsp;second[,&nbsp;msg])</td>
+<td>An unordered sequence comparison asserting that the same elements, regardless of order.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">assertDictContainsSubset</span></code>(subset,&nbsp;dictionary)</td>
+<td>Checks whether dictionary is a superset of subset.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">assertEqual</span></code>(first,&nbsp;second[,&nbsp;msg])</td>
+<td>Fail if the two objects are unequal as determined by the ‘==’ operator.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">assertFalse</span></code>(expr[,&nbsp;msg])</td>
+<td>Check that the expression is false.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">assertGreater</span></code>(a,&nbsp;b[,&nbsp;msg])</td>
+<td>Just like self.assertTrue(a &gt; b), but with a nicer default message.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">assertGreaterEqual</span></code>(a,&nbsp;b[,&nbsp;msg])</td>
+<td>Just like self.assertTrue(a &gt;= b), but with a nicer default message.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">assertIn</span></code>(member,&nbsp;container[,&nbsp;msg])</td>
+<td>Just like self.assertTrue(a in b), but with a nicer default message.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">assertIs</span></code>(expr1,&nbsp;expr2[,&nbsp;msg])</td>
+<td>Just like self.assertTrue(a is b), but with a nicer default message.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">assertIsInstance</span></code>(obj,&nbsp;cls[,&nbsp;msg])</td>
+<td>Same as self.assertTrue(isinstance(obj, cls)), with a nicer default message.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">assertIsNone</span></code>(obj[,&nbsp;msg])</td>
+<td>Same as self.assertTrue(obj is None), with a nicer default message.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">assertIsNot</span></code>(expr1,&nbsp;expr2[,&nbsp;msg])</td>
+<td>Just like self.assertTrue(a is not b), but with a nicer default message.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">assertIsNotNone</span></code>(obj[,&nbsp;msg])</td>
+<td>Included for symmetry with assertIsNone.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">assertLess</span></code>(a,&nbsp;b[,&nbsp;msg])</td>
+<td>Just like self.assertTrue(a &lt; b), but with a nicer default message.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">assertLessEqual</span></code>(a,&nbsp;b[,&nbsp;msg])</td>
+<td>Just like self.assertTrue(a &lt;= b), but with a nicer default message.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">assertListEqual</span></code>(list1,&nbsp;list2[,&nbsp;msg])</td>
+<td>A list-specific equality assertion.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">assertLogs</span></code>([logger,&nbsp;level])</td>
+<td>Fail unless a log message of level <em>level</em> or higher is emitted on <em>logger_name</em> or its children.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">assertMultiLineEqual</span></code>(first,&nbsp;second[,&nbsp;msg])</td>
+<td>Assert that two multi-line strings are equal.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">assertNotAlmostEqual</span></code>(first,&nbsp;second[,&nbsp;…])</td>
+<td>Fail if the two objects are equal as determined by their difference rounded to the given number of decimal places (default 7) and comparing to zero, or by comparing that the difference between the two objects is less than the given delta.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">assertNotEqual</span></code>(first,&nbsp;second[,&nbsp;msg])</td>
+<td>Fail if the two objects are equal as determined by the ‘!=’ operator.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">assertNotIn</span></code>(member,&nbsp;container[,&nbsp;msg])</td>
+<td>Just like self.assertTrue(a not in b), but with a nicer default message.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">assertNotIsInstance</span></code>(obj,&nbsp;cls[,&nbsp;msg])</td>
+<td>Included for symmetry with assertIsInstance.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">assertNotRegex</span></code>(text,&nbsp;unexpected_regex[,&nbsp;msg])</td>
+<td>Fail the test if the text matches the regular expression.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">assertRaises</span></code>(expected_exception,&nbsp;*args,&nbsp;**kwargs)</td>
+<td>Fail unless an exception of class expected_exception is raised by the callable when invoked with specified positional and keyword arguments.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">assertRaisesRegex</span></code>(expected_exception,&nbsp;…)</td>
+<td>Asserts that the message in a raised exception matches a regex.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">assertRegex</span></code>(text,&nbsp;expected_regex[,&nbsp;msg])</td>
+<td>Fail the test unless the text matches the regular expression.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">assertSequenceEqual</span></code>(seq1,&nbsp;seq2[,&nbsp;msg,&nbsp;seq_type])</td>
+<td>An equality assertion for ordered sequences (like lists and tuples).</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">assertSetEqual</span></code>(set1,&nbsp;set2[,&nbsp;msg])</td>
+<td>A set-specific equality assertion.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">assertTrue</span></code>(expr[,&nbsp;msg])</td>
+<td>Check that the expression is true.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">assertTupleEqual</span></code>(tuple1,&nbsp;tuple2[,&nbsp;msg])</td>
+<td>A tuple-specific equality assertion.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">assertWarns</span></code>(expected_warning,&nbsp;*args,&nbsp;**kwargs)</td>
+<td>Fail unless a warning of class warnClass is triggered by the callable when invoked with specified positional and keyword arguments.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">assertWarnsRegex</span></code>(expected_warning,&nbsp;…)</td>
+<td>Asserts that the message in a triggered warning matches a regexp.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">debug</span></code>()</td>
+<td>Run the test without collecting errors in a TestResult</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">doCleanups</span></code>()</td>
+<td>Execute all cleanup functions.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">fail</span></code>([msg])</td>
+<td>Fail immediately, with the given message.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">failureException</span></code></td>
+<td>alias of <code class="xref py py-class docutils literal notranslate"><span class="pre">builtins.AssertionError</span></code></td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">setUp</span></code>()</td>
+<td>Hook method for setting up the test fixture before exercising it.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">setUpClass</span></code>()</td>
+<td>Hook method for setting up class fixture before running tests in the class.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">shortDescription</span></code>()</td>
+<td>Returns a one-line description of the test, or None if no description has been provided.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">skipTest</span></code>(reason)</td>
+<td>Skip this test.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">subTest</span></code>([msg])</td>
+<td>Return a context manager that will return the enclosed block of code in a subtest identified by the optional message and keyword parameters.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">tearDown</span></code>()</td>
+<td>Hook method for deconstructing the test fixture after testing it.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">tearDownClass</span></code>()</td>
+<td>Hook method for deconstructing the class fixture after running all tests in the class.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#test.TestRuleset.test_load_sanitizers" title="test.TestRuleset.test_load_sanitizers"><code class="xref py py-obj docutils literal notranslate"><span class="pre">test_load_sanitizers</span></code></a>()</td>
+<td>Make sure that sanitizers are loaded successfully.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#test.TestRuleset.test_load_sinks" title="test.TestRuleset.test_load_sinks"><code class="xref py py-obj docutils literal notranslate"><span class="pre">test_load_sinks</span></code></a>()</td>
+<td>Make sure that sinks are loaded successfully.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#test.TestRuleset.test_load_sources" title="test.TestRuleset.test_load_sources"><code class="xref py py-obj docutils literal notranslate"><span class="pre">test_load_sources</span></code></a>()</td>
+<td>Make sure that sources are loaded successfully.</td>
+</tr>
+</tbody>
+</table>
+<table border="1" class="docutils">
+<colgroup>
+<col width="72%" />
+<col width="28%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>assertAlmostEquals</strong></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><strong>assertDictEqual</strong></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><strong>assertEquals</strong></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><strong>assertNotAlmostEquals</strong></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><strong>assertNotEquals</strong></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><strong>assertNotRegexpMatches</strong></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><strong>assertRaisesRegexp</strong></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><strong>assertRegexpMatches</strong></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><strong>assert_</strong></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><strong>countTestCases</strong></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><strong>defaultTestResult</strong></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><strong>failIf</strong></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><strong>failIfAlmostEqual</strong></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><strong>failIfEqual</strong></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><strong>failUnless</strong></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><strong>failUnlessAlmostEqual</strong></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><strong>failUnlessEqual</strong></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><strong>failUnlessRaises</strong></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><strong>id</strong></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><strong>run</strong></td>
+<td>&#160;</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="test.TestRuleset.test_load_sanitizers">
+<code class="descname">test_load_sanitizers</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#test.TestRuleset.test_load_sanitizers" title="Permalink to this definition">¶</a></dt>
+<dd><p>Make sure that sanitizers are loaded successfully.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="test.TestRuleset.test_load_sinks">
+<code class="descname">test_load_sinks</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#test.TestRuleset.test_load_sinks" title="Permalink to this definition">¶</a></dt>
+<dd><p>Make sure that sinks are loaded successfully.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="test.TestRuleset.test_load_sources">
+<code class="descname">test_load_sources</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#test.TestRuleset.test_load_sources" title="Permalink to this definition">¶</a></dt>
+<dd><p>Make sure that sources are loaded successfully.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="test.replace_sink_rules">
+<code class="descclassname">test.</code><code class="descname">replace_sink_rules</code><span class="sig-paren">(</span><em>ruleset: ruleset.Ruleset</em>, <em>new_rules: list</em><span class="sig-paren">)</span><a class="headerlink" href="#test.replace_sink_rules" title="Permalink to this definition">¶</a></dt>
+<dd><p>Replace existing sink rules from a ruleset with <cite>new_rules</cite>.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>ruleset</strong> <span class="classifier-delimiter">:</span> <span class="classifier">Ruleset</span></dt>
+<dd><p class="first last">Replace the rules in this ruleset</p>
+</dd>
+<dt><strong>new_rules</strong> <span class="classifier-delimiter">:</span> <span class="classifier">dict</span></dt>
+<dd><p class="first last">New rules to replace the old ones.</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="test.replace_source_rules">
+<code class="descclassname">test.</code><code class="descname">replace_source_rules</code><span class="sig-paren">(</span><em>ruleset: ruleset.Ruleset</em>, <em>new_rules: list</em><span class="sig-paren">)</span><a class="headerlink" href="#test.replace_source_rules" title="Permalink to this definition">¶</a></dt>
+<dd><p>Replace existing source rules from a ruleset with <cite>new_rules</cite>.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>ruleset</strong> <span class="classifier-delimiter">:</span> <span class="classifier">Ruleset</span></dt>
+<dd><p class="first last">Replace the rules in this ruleset</p>
+</dd>
+<dt><strong>new_rules</strong> <span class="classifier-delimiter">:</span> <span class="classifier">dict</span></dt>
+<dd><p class="first last">New rules to replace the old ones.</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">TAINTalyzing</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2019, Jonas A. Wendorf.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.4</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/test.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

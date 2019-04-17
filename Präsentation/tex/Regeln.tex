@@ -1,0 +1,56 @@
+\section{Regelsätze}
+    \subsection{Format}
+        \begin{frame}[fragile]{\secname: \subsecname}
+            \begin{itemize}
+                \item Aufgebaut in YAML
+                \item Unterschiedlich für Quellen und Senken
+                \item[\textrightarrow] Senken haben optionalen Absicherungsblock
+            \end{itemize}
+            \begin{lstlisting}[gobble=16, escapechar=!]
+                ---
+                OBJEKTNAME:
+                    Methods:
+                    - Methodname: METHODENNAME
+                      Parameters: [null, $TAINT, null]
+                      Comment: KOMMENTAR
+                      !\textcolor{gray!95}{Sanitizers:}!
+                      !\textcolor{gray!95}{- OBJEKTNAME}!
+                          !\textcolor{gray!95}{Methods:}!
+                          !\textcolor{gray!95}{- Methodname: METHODNAME}!
+                            !\textcolor{gray!95}{Parameters: []}!
+                            !\textcolor{gray!95}{Comment: KOMMENTAR}!
+            \end{lstlisting}
+        \end{frame}
+
+    \subsection{Beispielregel scanf}
+        \begin{frame}[fragile]{\secname: \subsecname}
+            \begin{itemize}
+                \item \texttt{scanf} in C liest formatierten Text ein
+                \item Erster Parameter ist Formatstring, darauffolgende Parameter sind Zielvariablen
+            \end{itemize}
+            \begin{lstlisting}[gobble=16]
+                ---
+                null:
+                    Methods:
+                    - Methodname: scanf
+                      Parameters: [null, $TAINT]
+                      Comment: Reads formatted input from stdin
+            \end{lstlisting}
+        \end{frame}
+
+    \subsection{Beispielregel printf}
+        \begin{frame}[fragile]{\secname: \subsecname}
+            \begin{itemize}
+                \item \texttt{printf} in C gibt formatierten Text aus
+                \item Bei nur einem Parameter wird dieser als Formatstring erkannt
+                \item Benutzer kann eigene Formatstrings einfügen, um Daten zu offenbaren und Speicher zu ändern
+            \end{itemize}
+            \begin{lstlisting}[gobble=16]
+                ---
+                null:
+                    Methods:
+                    - Methodname: printf
+                      Parameters: [$TAINT]
+                      Comment: Format string vulnerability.
+            \end{lstlisting}
+        \end{frame}

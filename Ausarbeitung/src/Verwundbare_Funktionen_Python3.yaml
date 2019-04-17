@@ -1,0 +1,10 @@
+---
+Template:
+    Funktionen:
+    - Funktionsname: substitute
+    Absicherungen:
+        html:
+            Funktionsname: "escape($VARIABLE, $QUOTE)"
+            Parameter: "$QUOTE"
+            Parameterwert: !!python/object/apply:re.compile ["(quote=)?True"]
+    Kommentar: Gibt parametrisierte Texte aus, Gefahr von XSS

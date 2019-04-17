@@ -1,0 +1,22 @@
+{% Änderungen lokal für Verzeichnisse halten
+    \renewcommand*{\chapterpagestyle}{plain}
+    \microtypesetup{protrusion = false} % Unschön für nummerierte Verzeichnisse
+    \tableofcontents%
+    % Weitere Verzeichnisse können hier bei Bedarf hinzugefügt werden
+    % \listoffigures%
+    % \listoftables%
+    % \lstlistoflistings%
+    \microtypesetup{protrusion = true}
+    \printglossary[type=\acronymtype] % Abkürzungen separat ausgeben
+    % \printglossary% Glossar ausgeben
+    \cleardoublepage%
+}
+
+% Ab jetzt anderer Stil für Kapitel
+\renewcommand*{\chapterformat}{\LARGE\sffamily\bfseries\textup\thechapter.\enskip}
+\setkomafont{chapter}{\LARGE\sffamily\bfseries\textup}
+\renewcommand*{\chapterheadstartvskip}{\vspace{-4.5em}}
+\renewcommand*{\chapterheadendvskip}{\vspace{-1.4em}\rule{\textwidth}{1pt}\vspace{20pt}}
+
+\pagestyle{plain}
+\pagenumbering{arabic}

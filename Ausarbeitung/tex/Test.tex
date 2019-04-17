@@ -1,0 +1,288 @@
+\chapter{Test des Frameworks}
+    Um die Praxistauglichkeit des Frameworks zu demonstrieren,
+    wird im Folgenden gezeigt,
+    wie man mittels Docker von beliebigen Systemen aus das Framework benutzen kann,
+    selbst wenn das eigene System nicht die notwendigen Voraussetzungen
+    -- installiertes Python 3.7 und
+    libmagic
+    -- erfüllt.
+
+    Anschließend wird anhand eines Beispielreports gezeigt,
+    welche Arten von Schwachstellen mit dem Framework gefunden werden können und
+    deren Aufkommen im Quelltext stichprobenartig nachvollzogen.
+
+    \section{Test auf verschiedenen Systemen mittels Docker}
+        Bei Docker handelt es sich um eine freie Software zur Containervirtualisierung für Linux,
+        Windows und
+        MacOS.\cite{Docker2019}
+
+        Der große Vorteil von Docker besteht darin,
+        dass es hiermit möglich ist,
+        Anwendungen,
+        Konfigurationen und
+        Abhängigkeiten gebündelt in einem Container auszuliefern,
+        wodurch keine direkte Anpassung des Hostsystems mehr notwendig ist,
+        um Software zu installieren.
+
+        Stattdessen wird durch das Dockersystem eine vom Hostsystem isolierte Umgebung mittels
+        \gls{CGroups},
+        Namespaces und
+        \gls{UnionFS} geschaffen.
+        In Windows"=Systemen,
+        wo diese Technologien nicht in dieser Form existieren,
+        wird mittels Hyper"=V oder
+        VirtualBox eine virtuelle Linux"=Maschine erstellt,
+        in welcher die Umgebung wie beschrieben eingerichtet wird.\cite{Docker2019a}
+
+        Docker baut seine Container mittels einer Beschreibung im sogenannten
+        \foreignquote{english}{Dockerfile} auf.
+
+        Für dieses Framework wird das folgende Dockerfile verwendet:
+
+        \begin{lstlisting}[caption={Dockerfile für das entwickelte Framework}, language=Dockerfile, gobble=12]
+            FROM python:3.7-alpine
+            MAINTAINER Jonas A. Wendorf <jonas_wendorf@mail.de>
+            RUN apk add libmagic
+            COPY Projekt/ /app
+            WORKDIR /app
+            RUN pip install -r requirements.txt
+            RUN pipenv install --ignore-pipfile
+            ENTRYPOINT ["pipenv", "run", "python", "main.py"]
+        \end{lstlisting}
+
+        Die erste Zeile gibt hierbei an,
+        dass das neue Image basierend auf einem Linux Alpine Image mit vorinstalliertem Python 3.7 gebaut werden soll.
+
+        Linux Alpine hat hierbei den Vorteil,
+        dass es sehr klein ist und
+        somit auch die Dateigröße des resultierenden Images geringer hält,
+        als dies mit größeren Basisimages wie Windows Server Core oder
+        Debian Stretch,
+        den anderen beiden offiziell im Docker Hub verfügbaren Basisimages für Python 3.7,
+        möglich wäre.
+
+        Auf der anderen Seite ist Linux Alpine so minimalistisch,
+        dass in der dritten Zeile libmagic als Abhängigkeit nachinstalliert werden muss,
+        da dieses standardmäßig nicht installiert ist.
+
+        Die darauffolgende Zeile gibt an,
+        dass das Projekt im Verzeichnis
+        \filename{Projekt} liegt und
+        nach
+        \filename{/app} im Image kopiert werden soll.
+
+        Dieses Verzeichnis wird dann auch als Arbeitsverzeichnis angegeben und
+        die Installation der Python"=Pakete wird eingeleitet.
+
+        Der in der letzten Zeile angegebene Entrypoint gibt an,
+        dass beim Start des Containers direkt das Framework gestartet werden sollte,
+        damit der Benutzer nicht erst im Container nach dem passenden Pfad suchen muss.
+
+        Zum Bauen des Images kann anschließend auf einem Betriebssystem mit installiertem Docker der Befehl
+        \lstinline{docker build . -t taintalyzing} eingegeben werden,
+        um mit dem Dockerfile im aktuellen Verzeichnis ein Image zu erstellen und
+        dieses mit dem Tag
+        \enquote{taintalyzing} zu versehen.
+
+        Anschließend kann das Dockerimage zum Beispiel mittels
+        \lstinline{docker run --rm -v "$(pwd)/appdata":/appdata taintalyzing}
+        gestartet werden,
+        um den Container nach der Beendigung automatisch aufzuräumen und
+        während der Laufzeit das Unterverzeichnis
+        \filename{appdata} im aktuellen Verzeichnis in das Verzeichnis
+        \filename{/appdata} im Container weiterzureichen.
+
+        Von hier aus kann das Framework dann
+        wie bei einer nativen Installation auf dem eigenen Betriebssystem benutzt werden mit dem einzigen Unterschied,
+        dass nur Dateien im Verzeichnis
+        \filename{/appdata} auf dem Zielsystem untersucht werden können.
+
+        Wenn der Benutzer einen Report im
+        \gls{HTML}"=Format erstellt,
+        sollte außerdem darauf geachtet werden,
+        dass die Dateien
+        \filename{customize.js},
+        \filename{logo.png} und
+        \filename{style.css} ebenfalls aus dem Projektordner in den Ordner mit dem gespeicherten Report kopiert werden müssen.
+
+        Für das ältere Docker Toolbox unter Windows ist außerdem wichtig zu beachten,
+        dass standardmäßig nur Unterverzeichnisse von
+        \filename{C:\textbackslash{}Users} in Container weitergegeben werden können.
+        Weitere Pfade müssen manuell in VirtualBox für die virtuelle Maschine freigegeben werden.\cite{Procida2019}
+
+    \section{Beispielreport und Auswertung}
+        Für den folgenden Beispielreport wurde der Terminaldateimanager cfiles von Manan Singh mit Stand vom 17.~Januar 2019 genutzt
+        (Commit
+        \hash{a4e8ba74f2662f2df5a45deb3a4377936d5141fb}).\cite{Singh2019}
+
+        Das Projekt wurde ausgewählt,
+        da es zum einen in C geschrieben ist und
+        einige der in dieser Sprache typischsten Sicherheitslücken aufweist,
+        zum anderen,
+        weil die besagten Sicherheitslücken mittlerweile korrigiert wurden und
+        somit im Rahmen dieser Masterarbeit keine Zero"=Day"=Schwachstellen veröffentlicht werden,
+        welche Benutzer des Projekts in Gefahr bringen könnten.
+
+        Für die Auswertung wurde die folgende Regel zum Suchen nach Quellen genutzt:
+
+        \begin{lstlisting}[caption={Regel für die Suche nach Quellen}, gobble=12]
+            ---
+            null:
+                Methods:
+                - Methodname: getenv
+                Parameters: [null]
+                Comment: Reads environment variables
+        \end{lstlisting}
+
+        Weiterhin wurden folgende Regeln eingesetzt,
+        um Senken zu finden:
+
+        \begin{lstlisting}[caption={Regeln für die Suche nach Senken}, gobble=12]
+            ---
+            null:
+                Methods:
+                - Methodname: sprintf
+                Parameters: [null, null, $TAINT]
+                Comment: No check for destination buffer size, use snprintf instead.
+                - Methodname: strcpy
+                Parameters: [null, $TAINT]
+                Comment: No check for destination buffer size, use strncpy instead.
+                - Methodname: system
+                Parameters: [$TAINT]
+                Comment: Executes arbitrary system commands.
+        \end{lstlisting}
+
+        Insgesamt wurden bereits mit nur diesen Regeln 24 Verschmutzungen und
+        31 Senken gefunden.
+        Weitere Schwachstellen existieren im Code,
+        dieses Beispiel soll allerdings zeigen,
+        wie typisch es für Entwickler ist,
+        einen Fehler durchgängig zu machen,
+        und
+        wenn bei der Korrektur nur einer dieser Fehler übersehen wird,
+        kann es zu fatalen Konsequenzen führen.
+
+        Im Folgenden sind daher stichprobenartig einige der Befunde zusammen mit einem Vergleich des Quelltextes aufgeführt.
+
+        Der vollständige Report im Reintext"= und
+        \gls{HTML}"=Format befindet sich in den Anlagen.
+
+        \foreignquote{english}{Analysis results for method ``init'' (lines 134 to 171).
+
+        The following taints were detected:\\
+        In line 145 a call with potentially user controlled input is made to sprintf.\\
+        The following comment is linked to this sink: No check for destination buffer size, use snprintf instead.\\
+        No sanitizer detected.\\
+        Severity level: 100\%.}
+
+        Im Code wird in Zeile 145 folgender Aufruf benutzt:
+
+        \lstinline{sprintf(editor, "%s", getenv("EDITOR"));}
+
+        Wie der Kommentar aus dem Report bereits andeutet,
+        findet bei
+        \lstinline{sprintf} keine Prüfung der Größe des Zielpuffers statt,
+        entsprechend könnte ein Angreifer die Variable
+        \lstinline{editor},
+        welche in Zeile 53 als
+        \lstinline{char editor[20]} deklariert wird,
+        überfluten,
+        indem er einen Eintrag mit mehr als 20 Zeichen verwendet.
+
+        Die Senke wird dadurch zur Verschmutzung,
+        dass im gleichen Aufruf zu
+        \lstinline{sprintf} ein weiterer Aufruf zu
+        \lstinline{getenv("EDITOR")} enthalten ist,
+        wodurch die Umgebungsvariable
+        \lstinline{EDITOR} eingelesen wird.
+
+        Ein Angreifer,
+        der Zugriff auf die Umgebungsvariablen hat,
+        kann diese Variable entsprechend abändern und
+        anschließend die Kontrolle über das System übernehmen.
+
+        Ein ähnliches Problem befindet sich in Zeile 491.
+
+        Hier meldet der Report
+
+        \foreignquote{english}{Analysis results for method ``getImgPreview'' (lines 473 to 521).
+
+        The following taints were detected:\\
+        In line 491 a call with potentially user controlled input is made to sprintf.\\
+        The following comment is linked to this sink: No check for destination buffer size, use snprintf instead.\\
+        No sanitizer detected.\\
+        Severity level: 100\%.}
+
+        Im Code wird an dieser Stelle die folgende Zeile genutzt:
+
+        \lstinline{sprintf(getdimensions_command,"echo -e \'5;%s'|/usr/lib/w3m/w3mimgdisplay",filepath);}
+
+        Hier wird in den in Zeile 484 deklarierten Puffer
+        \lstinline{char getdimensions_command[250]} die Eingabe von
+        \lstinline{filepath} geschrieben,
+        ohne die Größe von
+        \lstinline{getdimensions_command} vorher zu prüfen.
+
+        Die Senke wird in diesem Fall zur Verschmutzung,
+        weil die Variablenverfolgung ergibt,
+        dass
+        \lstinline{filepath} in Zeile 473 als Parameter an die Methode übergeben wird und
+        somit potenziell benutzerkontrolliert ist.
+
+        Ein interessanter Fall ergibt sich in Zeile 519,
+        in der Methode
+        \lstinline{getImgPreview},
+        wo
+        \lstinline{system} genutzt wird,
+        um einen Systembefehl auszuführen:
+
+        \lstinline{system(imgdisplay_command);}
+
+        Diese Stelle ist dadurch interessant,
+        dass in der vorherigen Zeile die in diesem Aufruf verwendete Variable
+        \lstinline{imgdisplay_command} durch
+        \lstinline{sprintf} basierend auf dem vom Benutzer kontrollierten
+        \lstinline{filepath} befüllt wird:
+
+        \lstinline{sprintf(imgdisplay_command, "echo -e '0;1;%d;%d;%d;%d;;;;;%s\n4;\n3;' | /usr/lib/w3m/w3mimgdisplay", maxx+maxx/5, 8, width, height, filepath);}
+
+        Der Aufruf zu
+        \lstinline{system} wird allerdings nicht als Verschmutzung erkannt,
+        da
+        \lstinline{sprintf} in den Regeln nicht als Quelle markiert wurde.
+
+        Dies demonstriert die zuvor beschriebene Notwendigkeit,
+        auch Senken aufzunehmen,
+        für die keine Quelle gefunden werden konnte,
+        da es sein kann,
+        dass lediglich eine entsprechende Regel für die Quellen fehlt.
+
+        Die entsprechende Ausgabe im Report ist daher:
+        \foreignquote{english}{In line 519 a call without any detected user controlled input is made to system.\\
+        The following comment is linked to this sink: Executes arbitrary system commands.\\
+        Severity level: 50\%.}
+
+        Auch die Verfolgung von verwundbaren Methodenaufrufen lässt sich an diesem Projekt gut nachvollziehen.
+
+        So wird in der Methode
+        \lstinline{main} in Zeile 1061 die Methode
+        \lstinline{getPreview} aufgerufen,
+        welche wiederum in Zeile 616
+        \lstinline{getArchivePreview} aufruft.
+
+        Da in
+        \lstinline{getArchivePreview} eine Verschmutzung erkannt wurde,
+        allerdings keine benutzerkontrollierte Eingabe für den Aufruf von
+        \lstinline{getPreview} in der
+        \lstinline{main}"=Methode erkannt wurde,
+        wird dieser Aufruf im Report lediglich als Senke und
+        nicht als Verschmutzung ausgegeben:
+        \foreignquote{english}{In line 1061 a call without any detected user controlled input is made to getPreview.\\
+        The following comment is linked to this sink: Calls getArchivePreview from None.\\
+        Severity level: 50\%.}
+
+        Die Ausgaben,
+        dass eine Methode
+        \foreignquote{english}{from None} aufgerufen wird,
+        bedeutet dabei jeweils,
+        dass keine Objektzugehörigkeit erkannt wurde.
