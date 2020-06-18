@@ -1,3 +1,5 @@
+**ATTENTION**: I haven’t updated this repository for quite a while and I’m not sure when I’ll get the time to again.  Work is keeping me pretty busy and there is a new kid on the block with [CodeQL](https://securitylab.github.com/tools/codeql), which pretty much makes this project obsolete because it does pretty much what TAINTalyzing set out to do but has more active support and development behind it (whereas TAINTalyzing was a one-man-job for a few months).  I recommend you give [CodeQL](https://securitylab.github.com/tools/codeql) a try and see if you like it :)!
+
 # TAINTalyzing
 
 An easy to extend static code analysis framework.
